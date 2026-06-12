@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   basePath: "/Al-Mahmasani-Roastery",
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./imageLoader.ts",
   },
 };
 
