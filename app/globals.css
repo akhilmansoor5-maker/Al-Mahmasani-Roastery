@@ -23,7 +23,10 @@
   --radius-card:  28px;
   --radius-btn:   999px;
   --radius-tag:   999px;
-  --section-pad:  clamp(5rem, 10vw, 9rem);
+  --section-pad:  10rem;
+  --container:    1400px;
+  --gap-grid:     48px;
+  --pad-card:     40px;
 }
 
 /* ─────────────────────────────────────────────
@@ -70,21 +73,21 @@ img, video { display: block; max-width: 100%; }
 
 .display-xl {
   font-family: var(--serif);
-  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-size: clamp(4.5rem, 10vw, 7.5rem);
   font-weight: 400;
   line-height: 0.95;
 }
 .display-lg {
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-size: clamp(3.25rem, 7vw, 5rem);
   font-weight: 400;
   line-height: 1;
 }
 .display-md {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.02;
 }
 
 /* ─────────────────────────────────────────────

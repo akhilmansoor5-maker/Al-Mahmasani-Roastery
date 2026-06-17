@@ -24,7 +24,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative h-screen min-h-[620px] overflow-hidden">
+    <section className="relative overflow-hidden" style={{ minHeight: "100vh" }}>
 
       {/* Animated slideshow fallback */}
       <div
@@ -60,7 +60,7 @@ export default function HeroSection() {
         <source src="/videos/hero.webm" type="video/webm" />
       </video>
 
-      {/* Dark overlay — hero stays cinematic/dark even on light site */}
+      {/* Dark overlay */}
       <div
         className="absolute inset-0 z-[2]"
         style={{
@@ -70,27 +70,43 @@ export default function HeroSection() {
       />
       {/* Bottom fade into cream */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-48 z-[2]"
+        className="absolute bottom-0 left-0 right-0 z-[2]"
         style={{
-          background:
-            "linear-gradient(to top, var(--bg) 0%, transparent 100%)",
+          height: "200px",
+          background: "linear-gradient(to top, var(--bg) 0%, transparent 100%)",
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-[3] h-full flex flex-col justify-end">
-        <div className="max-w-7xl mx-auto w-full px-6 lg:px-10 pb-24 md:pb-32">
-          <div className="max-w-2xl">
+      {/* Content — vertically centered */}
+      <div
+        className="relative z-[3] flex flex-col justify-center"
+        style={{ minHeight: "100vh", padding: "120px 0" }}
+      >
+        <div
+          className="w-full"
+          style={{
+            maxWidth: "var(--container)",
+            margin: "0 auto",
+            paddingLeft: "clamp(32px, 6vw, 80px)",
+            paddingRight: "clamp(32px, 6vw, 80px)",
+          }}
+        >
+          <div style={{ maxWidth: "700px" }}>
 
-            <p className="section-label mb-5 opacity-0 hero-in-1" style={{ color: "var(--gold-mid)" }}>
+            <p
+              className="section-label opacity-0 hero-in-1"
+              style={{ color: "var(--gold-mid)", marginBottom: "24px" }}
+            >
               Est. 1975 · United Arab Emirates
             </p>
 
             <h1
-              className="text-white font-normal leading-[0.96] mb-6 opacity-0 hero-in-2"
+              className="text-white font-normal opacity-0 hero-in-2"
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: "clamp(3.2rem, 8vw, 7rem)",
+                fontSize: "clamp(4.5rem, 10vw, 7.5rem)",
+                lineHeight: "0.96",
+                marginBottom: "32px",
               }}
             >
               Heritage in<br />
@@ -100,11 +116,14 @@ export default function HeroSection() {
             </h1>
 
             <p
-              className="leading-relaxed mb-10 max-w-lg opacity-0 hero-in-3"
+              className="opacity-0 hero-in-3"
               style={{
                 fontFamily: "var(--sans)",
-                fontSize: "1rem",
+                fontSize: "18px",
+                lineHeight: "1.7",
                 color: "rgba(255,255,255,0.60)",
+                maxWidth: "520px",
+                marginBottom: "48px",
               }}
             >
               Premium nuts, dried fruits and snack products — supplied to the
@@ -128,8 +147,7 @@ export default function HeroSection() {
                   (e.currentTarget as HTMLElement).style.color = "var(--gold-mid)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor =
-                    "rgba(255,255,255,0.30)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.30)";
                   (e.currentTarget as HTMLElement).style.color = "#fff";
                 }}
               >
@@ -157,8 +175,7 @@ export default function HeroSection() {
           (e.currentTarget as HTMLElement).style.color = "var(--gold-mid)";
         }}
         onMouseLeave={(e) => {
-          (e.currentTarget as HTMLElement).style.borderColor =
-            "rgba(255,255,255,0.28)";
+          (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.28)";
           (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)";
         }}
       >
@@ -170,8 +187,7 @@ export default function HeroSection() {
         <div
           className="w-px h-12 animate-pulse"
           style={{
-            background:
-              "linear-gradient(to bottom, rgba(201,168,76,0.55), transparent)",
+            background: "linear-gradient(to bottom, rgba(201,168,76,0.55), transparent)",
           }}
         />
       </div>

@@ -46,10 +46,18 @@ export default function PartnerSection() {
   const t = tabs[active];
 
   return (
-    <section style={{ background: "var(--bg-2)" }}>
+    <section style={{ background: "var(--bg-2)", minHeight: "80vh", display: "flex", flexDirection: "column" }}>
       {/* Tab bar */}
-      <div style={{ borderBottom: "1.5px solid var(--border)" }} className="overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex">
+      <div style={{ borderBottom: "1.5px solid var(--border)", overflowX: "auto" }}>
+        <div
+          style={{
+            maxWidth: "var(--container)",
+            margin: "0 auto",
+            paddingLeft: "clamp(24px, 4vw, 80px)",
+            paddingRight: "clamp(24px, 4vw, 80px)",
+            display: "flex",
+          }}
+        >
           {tabs.map((tab, i) => (
             <button
               key={tab.label}
@@ -63,19 +71,39 @@ export default function PartnerSection() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+      <div
+        style={{
+          maxWidth: "var(--container)",
+          margin: "0 auto",
+          width: "100%",
+          flex: 1,
+          paddingLeft: "clamp(24px, 4vw, 80px)",
+          paddingRight: "clamp(24px, 4vw, 80px)",
+        }}
+      >
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, height: "100%", minHeight: "calc(80vh - 60px)" }}>
 
-          {/* Text */}
-          <div className="py-20 lg:py-28 lg:pr-20 flex flex-col justify-center">
-            <span className="section-label block mb-6">Become a Partner</span>
+          {/* Text column */}
+          <div
+            style={{
+              paddingTop: "120px",
+              paddingBottom: "120px",
+              paddingRight: "60px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <span className="section-label" style={{ display: "block", marginBottom: "24px" }}>Become a Partner</span>
             <h2
               key={active}
-              className="font-normal leading-[1.02] mb-7"
+              className="font-normal"
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
+                fontSize: "clamp(3.25rem, 6vw, 4.5rem)",
+                lineHeight: "1.02",
                 color: "var(--text)",
+                marginBottom: "28px",
                 animation: "hero-rise 0.6s cubic-bezier(0.16,1,0.3,1) both",
               }}
             >
@@ -84,21 +112,28 @@ export default function PartnerSection() {
               ))}
             </h2>
             <p
-              className="text-sm leading-relaxed mb-10 max-w-md"
-              style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: "18px",
+                lineHeight: "1.8",
+                color: "var(--text-muted)",
+                maxWidth: "480px",
+                marginBottom: "40px",
+              }}
             >
               {t.body}
             </p>
             <Link
               href="/contact"
-              className="btn btn-outline-gold text-[10px] tracking-[0.18em] self-start"
+              className="btn btn-outline-gold text-[10px] tracking-[0.18em]"
+              style={{ alignSelf: "flex-start" }}
             >
               {t.cta}
             </Link>
           </div>
 
-          {/* Image */}
-          <div className="relative hidden lg:block" style={{ minHeight: "520px" }}>
+          {/* Image column */}
+          <div className="relative hidden lg:block" style={{ minHeight: "100%" }}>
             <Image
               key={active}
               src={t.img}

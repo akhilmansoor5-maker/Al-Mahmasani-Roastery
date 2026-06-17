@@ -1,13 +1,14 @@
 "use client";
-import { useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
   className?: string;
   delay?: number;
+  style?: React.CSSProperties;
 }
 
-export default function AnimatedSection({ children, className = "", delay = 0 }: Props) {
+export default function AnimatedSection({ children, className = "", delay = 0, style }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function AnimatedSection({ children, className = "", delay = 0 }:
   }, [delay]);
 
   return (
-    <div ref={ref} className={`section-fade ${className}`}>
+    <div ref={ref} className={`section-fade ${className}`} style={style}>
       {children}
     </div>
   );
