@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ background: "#f7f2e8", color: "#1a1108" }}>
         <Navbar />
         <main>{children}</main>
         <Footer />

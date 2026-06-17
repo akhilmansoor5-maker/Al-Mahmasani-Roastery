@@ -46,9 +46,9 @@ export default function PartnerSection() {
   const t = tabs[active];
 
   return (
-    <section className="bg-[#0a0a0a] overflow-hidden">
+    <section style={{ background: "var(--bg-2)" }}>
       {/* Tab bar */}
-      <div className="border-b border-[rgba(201,168,76,0.10)] overflow-x-auto">
+      <div style={{ borderBottom: "1.5px solid var(--border)" }} className="overflow-x-auto">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex">
           {tabs.map((tab, i) => (
             <button
@@ -71,10 +71,11 @@ export default function PartnerSection() {
             <span className="section-label block mb-6">Become a Partner</span>
             <h2
               key={active}
-              className="text-white font-light leading-[1.02] mb-7"
+              className="font-normal leading-[1.02] mb-7"
               style={{
                 fontFamily: "var(--serif)",
                 fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
+                color: "var(--text)",
                 animation: "hero-rise 0.6s cubic-bezier(0.16,1,0.3,1) both",
               }}
             >
@@ -83,14 +84,14 @@ export default function PartnerSection() {
               ))}
             </h2>
             <p
-              className="text-white/45 text-sm leading-relaxed mb-10 max-w-md"
-              style={{ fontFamily: "var(--sans)" }}
+              className="text-sm leading-relaxed mb-10 max-w-md"
+              style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}
             >
               {t.body}
             </p>
             <Link
               href="/contact"
-              className="btn btn-outline-gold text-[10px] tracking-[0.22em] self-start"
+              className="btn btn-outline-gold text-[10px] tracking-[0.18em] self-start"
             >
               {t.cta}
             </Link>
@@ -104,10 +105,16 @@ export default function PartnerSection() {
               alt={t.label}
               fill
               sizes="50vw"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", borderRadius: "var(--radius-card) 0 0 var(--radius-card)" }}
               className="transition-opacity duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-transparent" style={{ width: "30%" }} />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(to right, var(--bg-2) 0%, transparent 30%)",
+                borderRadius: "var(--radius-card) 0 0 var(--radius-card)",
+              }}
+            />
           </div>
         </div>
       </div>
