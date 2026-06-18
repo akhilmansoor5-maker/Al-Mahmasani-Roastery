@@ -148,8 +148,7 @@ export default function AboutPage() {
           <AnimatedSection className="mb-20">
             <span className="section-label block mb-4">Our Journey</span>
             <h2 className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "var(--text)" }}>
-              50 Years in<br />
-              <span className="gold-text">the Making</span>
+              50 Years in the Making
             </h2>
           </AnimatedSection>
 
@@ -157,16 +156,16 @@ export default function AboutPage() {
             {timeline.map((item, i) => (
               <AnimatedSection key={item.year} delay={i * 80}>
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-0 py-10 border-b group transition-colors duration-300 ${i === 0 ? "border-t" : ""}`}
-                  style={{ borderColor: "var(--border)" }}
+                  className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-0 border-b group transition-colors duration-300 ${i === 0 ? "border-t" : ""}`}
+                  style={{ borderColor: "var(--border)", paddingTop: "48px", paddingBottom: "48px" }}
                 >
                   <div className="md:col-span-2">
-                    <p className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "2rem", color: "var(--gold-mid)" }}>{item.year}</p>
+                    <p className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "2.25rem", color: "var(--gold-mid)" }}>{item.year}</p>
                   </div>
-                  <div className="md:col-span-3">
+                  <div className="md:col-span-3" style={{ paddingTop: "8px" }}>
                     <p className="text-sm tracking-[0.1em] uppercase font-medium" style={{ fontFamily: "var(--sans)", color: "var(--text)" }}>{item.title}</p>
                   </div>
-                  <div className="md:col-span-7">
+                  <div className="md:col-span-7" style={{ paddingTop: "8px" }}>
                     <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{item.event}</p>
                   </div>
                 </div>

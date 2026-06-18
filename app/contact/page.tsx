@@ -40,19 +40,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
+      <section className="relative h-[65vh] min-h-[480px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img src="/Al-Mahmasani-Roastery/images/products/cashew-3.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 40%)" }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-black/45" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 30%)" }} />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 pt-32 page-enter">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 pb-24 pt-36 page-enter">
           <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Get In Touch</p>
           <h1 className="text-white font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3.5rem, 8vw, 7rem)", lineHeight: 1 }}>
             Let&apos;s Work Together
           </h1>
-          <p className="text-white/50 text-sm mt-5 max-w-md" style={{ fontFamily: "var(--sans)" }}>
+          <p className="text-white/60 text-sm mt-6 max-w-lg" style={{ fontFamily: "var(--sans)", lineHeight: 1.8 }}>
             We work with supermarkets, distributors, restaurants, hotels and retailers across the UAE. Get in touch for wholesale pricing and product information.
           </p>
         </div>
@@ -60,8 +60,8 @@ export default function ContactPage() {
 
       {/* Contact Content */}
       <section className="section-pad">
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(32px,6vw,96px)", paddingRight: "clamp(32px,6vw,96px)" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 lg:gap-24">
 
             {/* Left — details */}
             <div className="lg:col-span-2 space-y-12">
@@ -179,7 +179,7 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Full Name *</label>

@@ -9,7 +9,7 @@ export default function Footer() {
 
       {/* Top CTA strip */}
       <div style={{ borderBottom: "1px solid var(--border)" }}>
-        <div className="max-w-7xl mx-auto px-6 py-9 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8" style={{ paddingLeft: "clamp(24px,6vw,96px)", paddingRight: "clamp(24px,6vw,96px)", paddingTop: "56px", paddingBottom: "56px" }}>
           <p
             className="text-[10px] font-semibold tracking-[0.38em] uppercase"
             style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}
@@ -29,8 +29,8 @@ export default function Footer() {
       </div>
 
       {/* Main */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-14">
+      <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(24px,6vw,96px)", paddingRight: "clamp(24px,6vw,96px)", paddingTop: "96px", paddingBottom: "56px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-12 mb-20" style={{ gap: "clamp(40px,5vw,96px)" }}>
 
           {/* Brand */}
           <div className="md:col-span-5">
@@ -234,8 +234,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="pt-7 flex flex-col sm:flex-row items-center justify-between gap-3"
-          style={{ borderTop: "1px solid var(--border)" }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid var(--border)", paddingTop: "40px" }}
         >
           <p
             className="text-xs tracking-widest"

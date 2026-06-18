@@ -240,17 +240,17 @@ function Modal({ product, onClose }: { product: Product; onClose: () => void }) 
           </div>
         </div>
 
-        <div className="p-8">
-          <p className="text-[10px] tracking-[0.4em] uppercase mb-2" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>{product.category}</p>
-          <h2 className="font-light mb-2" style={{ fontFamily: "var(--serif)", fontSize: "1.75rem", color: "var(--text)" }}>{product.name}</h2>
-          <p className="text-[10px] tracking-[0.3em] uppercase mb-6" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Origin: {product.origin}</p>
-          <p className="text-sm leading-relaxed mb-8" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{product.details}</p>
+        <div style={{ padding: "40px" }}>
+          <p className="text-[10px] tracking-[0.4em] uppercase mb-3" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>{product.category}</p>
+          <h2 className="font-light mb-3" style={{ fontFamily: "var(--serif)", fontSize: "1.875rem", color: "var(--text)" }}>{product.name}</h2>
+          <p className="text-[10px] tracking-[0.3em] uppercase mb-7" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Origin: {product.origin}</p>
+          <p className="text-sm leading-relaxed mb-10" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{product.details}</p>
 
-          <div className="mb-8">
-            <p className="text-[10px] tracking-[0.4em] uppercase mb-3" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Pack Sizes Available</p>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-10">
+            <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Pack Sizes Available</p>
+            <div className="flex flex-wrap gap-2.5">
               {product.sizes.map((s) => (
-                <span key={s} className="text-xs px-3 py-1.5"
+                <span key={s} className="text-xs px-4 py-2"
                   style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
                   {s}
                 </span>
@@ -261,10 +261,10 @@ function Modal({ product, onClose }: { product: Product; onClose: () => void }) 
           <a
             href={`${WHATSAPP}?text=${encodeURIComponent(`Hello Al Mahmasani Roasteries,\n\nI am interested in ${product.name}.\n\nPlease provide pricing and availability for wholesale orders.\n\nThank you.`)}`}
             target="_blank" rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white text-[11px] tracking-[0.2em] uppercase py-4 hover:bg-[#20ba59] transition-all duration-300 font-medium"
-            style={{ fontFamily: "var(--sans)", borderRadius: "var(--radius-btn)" }}
+            className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white text-[10px] tracking-[0.22em] uppercase hover:bg-[#20ba59] transition-all duration-300 font-semibold"
+            style={{ fontFamily: "var(--sans)", borderRadius: "var(--radius-btn)", padding: "0.875rem 2.5rem" }}
           >
-            <MessageCircle size={15} />
+            <MessageCircle size={14} />
             Enquire on WhatsApp
           </a>
         </div>
@@ -288,20 +288,19 @@ export default function ProductsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[380px] flex items-end overflow-hidden">
+      <section className="relative h-[70vh] min-h-[520px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image src="/images/products/cashew-3.jpg" alt="Products" fill sizes="100vw" style={{ objectFit: "cover" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/60 to-black/30" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 40%)" }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/70 to-black/40" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 30%)" }} />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 pt-32 page-enter">
-          <p className="section-label block mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>Our Selection</p>
-          <h1 className="text-white font-light leading-tight" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3rem,7vw,5.5rem)" }}>
-            Premium<br />
-            <span className="gold-text">Products</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 pb-20 pt-36 page-enter">
+          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Our Selection</p>
+          <h1 className="text-white font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3.5rem,8vw,6.5rem)", lineHeight: 1 }}>
+            Premium Products
           </h1>
-          <p className="text-white/50 text-sm mt-4 max-w-md" style={{ fontFamily: "var(--sans)" }}>
+          <p className="text-white/55 text-sm mt-6 max-w-md" style={{ fontFamily: "var(--sans)", lineHeight: 1.7 }}>
             {products.length}+ products across {categories.length - 1} categories — wholesale-ready, UAE-wide.
           </p>
         </div>
@@ -422,7 +421,7 @@ export default function ProductsPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col flex-1 p-6">
+                      <div className="flex flex-col flex-1" style={{ padding: "28px" }}>
                         <p className="text-[9px] tracking-[0.4em] uppercase mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>{p.category}</p>
                         <h3 className="font-light mb-3 leading-snug" style={{ fontFamily: "var(--serif)", fontSize: "1.1rem", color: "var(--text)" }}>{p.name}</h3>
                         <p className="text-xs leading-relaxed mb-5 line-clamp-2 flex-1" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{p.desc}</p>

@@ -100,47 +100,56 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-5 w-52 bg-[var(--bg-card)] border border-[var(--border)] backdrop-blur-xl shadow-[0_16px_48px_rgba(139,105,20,0.14)] transition-all duration-300 ${
+                style={{ width: "288px", borderRadius: "var(--radius-card)" }}
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-6 bg-[var(--bg-card)] border border-[var(--border)] backdrop-blur-xl shadow-[0_24px_64px_rgba(0,0,0,0.12)] transition-all duration-300 ${
                   dropOpen
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
-                style={{ borderRadius: "var(--radius-card)" }}
+
               >
-                <div className="py-2">
+                <div className="p-3">
                   <Link
                     href="/products"
                     onClick={() => setDropOpen(false)}
-                    className="block px-5 py-2.5 text-[9px] font-semibold tracking-[0.28em] uppercase border-b mb-1 transition-colors"
+                    className="flex items-center justify-between px-5 py-3.5 mb-1 transition-colors duration-150 text-[9px] font-semibold tracking-[0.28em] uppercase"
                     style={{
                       color: "var(--gold)",
-                      borderColor: "var(--border)",
                       fontFamily: "var(--sans)",
+                      borderRadius: "calc(var(--radius-card) - 6px)",
+                      background: "var(--bg-2)",
                     }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--bg-3)")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--bg-2)")}
                   >
                     All Products
+                    <span style={{ color: "var(--text-faint)", fontSize: "0.6rem", letterSpacing: "0.1em", fontWeight: 400 }}>View all →</span>
                   </Link>
-                  {categories.map((cat) => (
-                    <Link
-                      key={cat.label}
-                      href={cat.href}
-                      onClick={() => setDropOpen(false)}
-                      className="block px-5 py-2.5 text-[9px] tracking-[0.22em] uppercase transition-colors duration-150"
-                      style={{
-                        color: "var(--text-muted)",
-                        fontFamily: "var(--sans)",
-                      }}
-                      onMouseEnter={(e) =>
-                        ((e.target as HTMLElement).style.color = "var(--text)")
-                      }
-                      onMouseLeave={(e) =>
-                        ((e.target as HTMLElement).style.color =
-                          "var(--text-muted)")
-                      }
-                    >
-                      {cat.label}
-                    </Link>
-                  ))}
+                  <div className="pt-1 pb-1" style={{ borderTop: "1px solid var(--border)", marginTop: "4px" }}>
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.label}
+                        href={cat.href}
+                        onClick={() => setDropOpen(false)}
+                        className="flex items-center px-5 py-3 text-[9px] tracking-[0.22em] uppercase transition-colors duration-150"
+                        style={{
+                          color: "var(--text-muted)",
+                          fontFamily: "var(--sans)",
+                          borderRadius: "calc(var(--radius-card) - 8px)",
+                        }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLElement).style.color = "var(--text)";
+                          (e.currentTarget as HTMLElement).style.background = "var(--bg-2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+                          (e.currentTarget as HTMLElement).style.background = "transparent";
+                        }}
+                      >
+                        {cat.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
