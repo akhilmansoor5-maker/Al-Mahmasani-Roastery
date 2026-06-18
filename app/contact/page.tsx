@@ -40,18 +40,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[360px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2a1e0c] via-[#1a1108] to-[#080502]" />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 15% 60%, rgba(201,168,76,0.10) 0%, transparent 55%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 40%)" }} />
+      <section className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/Al-Mahmasani-Roastery/images/products/cashew-3.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 40%)" }} />
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 pt-32 page-enter">
-          <p className="section-label block mb-5">Get In Touch</p>
-          <h1 className="text-white font-light leading-tight" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3rem,7vw,5.5rem)" }}>
-            {"Let's Work"}<br />
-            <span className="gold-text">Together</span>
+          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Get In Touch</p>
+          <h1 className="text-white font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3.5rem, 8vw, 7rem)", lineHeight: 1 }}>
+            Let&apos;s Work Together
           </h1>
-          <p className="text-white/50 text-sm mt-4 max-w-md" style={{ fontFamily: "var(--sans)" }}>
+          <p className="text-white/50 text-sm mt-5 max-w-md" style={{ fontFamily: "var(--sans)" }}>
             We work with supermarkets, distributors, restaurants, hotels and retailers across the UAE. Get in touch for wholesale pricing and product information.
           </p>
         </div>

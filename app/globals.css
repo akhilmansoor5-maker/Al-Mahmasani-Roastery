@@ -5,19 +5,19 @@
    TOKENS — Cream & Gold, light theme
 ───────────────────────────────────────────── */
 :root {
-  --bg:           #f7f2e8;
-  --bg-2:         #f0e8d4;
-  --bg-3:         #e8dfc8;
-  --bg-card:      #faf7f0;
-  --gold:         #8b6914;
-  --gold-mid:     #c9a84c;
-  --gold-lt:      #e8c97a;
-  --gold-dk:      #5c4509;
-  --text:         #1a1108;
-  --text-muted:   rgba(26,17,8,0.55);
-  --text-faint:   rgba(26,17,8,0.28);
-  --border:       rgba(139,105,20,0.15);
-  --border-hover: rgba(139,105,20,0.40);
+  --bg:           #ffffff;
+  --bg-2:         #f6f6f6;
+  --bg-3:         #ededed;
+  --bg-card:      #ffffff;
+  --gold:         #111111;
+  --gold-mid:     #2d2d2d;
+  --gold-lt:      #666666;
+  --gold-dk:      #000000;
+  --text:         #0d0d0d;
+  --text-muted:   rgba(13,13,13,0.55);
+  --text-faint:   rgba(13,13,13,0.30);
+  --border:       rgba(0,0,0,0.10);
+  --border-hover: rgba(0,0,0,0.30);
   --serif:        'DM Serif Display', Georgia, serif;
   --sans:         'Inter', -apple-system, sans-serif;
   --radius-card:  28px;
@@ -94,18 +94,14 @@ img, video { display: block; max-width: 100%; }
    GOLD TEXT
 ───────────────────────────────────────────── */
 .gold-text {
-  background: linear-gradient(135deg, var(--gold-dk) 0%, var(--gold) 45%, var(--gold-mid) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
+  background: none;
 }
 .gold-shimmer {
-  background: linear-gradient(90deg, var(--gold-dk) 0%, var(--gold) 35%, var(--gold-mid) 50%, var(--gold) 65%, var(--gold-dk) 100%);
-  background-size: 200% auto;
-  animation: shimmer 5s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text);
+  -webkit-text-fill-color: var(--text);
+  background: none;
 }
 @keyframes shimmer {
   from { background-position: 0% center; }
@@ -197,23 +193,23 @@ img, video { display: block; max-width: 100%; }
 .btn:hover::after { transform: translateX(100%); }
 
 .btn-gold {
-  background: var(--gold);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(139,105,20,0.25);
+  background: #111111;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
 }
 .btn-gold:hover {
-  background: var(--gold-dk);
-  box-shadow: 0 6px 28px rgba(139,105,20,0.35);
+  background: #000000;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.28);
 }
 
 .btn-outline-gold {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: #111111;
+  color: #111111;
   background: transparent;
 }
 .btn-outline-gold:hover {
-  background: var(--gold);
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
 }
 
 .btn-outline-dark {
@@ -238,7 +234,7 @@ img, video { display: block; max-width: 100%; }
               transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .card:hover {
-  box-shadow: 0 16px 48px rgba(139,105,20,0.14);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.10);
   transform: translateY(-5px);
 }
 .card:hover .card-img img { transform: scale(1.06); }
@@ -259,8 +255,8 @@ img, video { display: block; max-width: 100%; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
-  background: rgba(139,105,20,0.08);
-  border: 1px solid rgba(139,105,20,0.22);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.15);
   padding: 0.28rem 0.85rem;
   border-radius: var(--radius-tag);
 }
@@ -297,11 +293,11 @@ img, video { display: block; max-width: 100%; }
    NAV
 ───────────────────────────────────────────── */
 .nav-scrolled {
-  background: rgba(247,242,232,0.96) !important;
-  border-bottom: 1px solid rgba(139,105,20,0.15);
+  background: rgba(255,255,255,0.96) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 24px rgba(139,105,20,0.07);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
 }
 
 /* ─────────────────────────────────────────────

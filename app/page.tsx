@@ -346,7 +346,7 @@ export default function Home() {
                   className="font-normal leading-none"
                   style={{
                     fontFamily: "var(--serif)",
-                    fontSize: "clamp(2.5rem, 8vw, 6rem)",
+                    fontSize: "clamp(2rem, 4.5vw, 3.75rem)",
                     color: "var(--gold)",
                     marginBottom: "10px",
                   }}
@@ -381,16 +381,12 @@ export default function Home() {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(105deg, rgba(247,242,232,0.97) 0%, rgba(240,232,212,0.90) 45%, rgba(240,232,212,0.65) 100%)" }}
+            style={{ background: "linear-gradient(105deg, rgba(255,255,255,0.97) 0%, rgba(250,250,250,0.92) 50%, rgba(245,245,245,0.70) 100%)" }}
           />
         </div>
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at 15% 50%, rgba(139,105,20,0.10) 0%, transparent 55%)" }}
-        />
 
-        <div className="cta-inner relative z-10">
-          <AnimatedSection style={{ maxWidth: "700px" }}>
+        <div className="cta-inner relative z-10" style={{ display: "flex", justifyContent: "center" }}>
+          <AnimatedSection style={{ maxWidth: "760px", textAlign: "center" }}>
             <span className="section-label" style={{ display: "block", marginBottom: "20px" }}>Wholesale Enquiries</span>
             <h2
               className="font-normal"
@@ -403,7 +399,7 @@ export default function Home() {
               }}
             >
               Ready to stock the<br />
-              <em className="gold-text not-italic">best in the region?</em>
+              best in the region?
             </h2>
             <p
               style={{
@@ -411,13 +407,14 @@ export default function Home() {
                 fontSize: "clamp(15px,2vw,18px)",
                 lineHeight: "1.8",
                 color: "var(--text-muted)",
-                maxWidth: "560px",
-                marginBottom: "clamp(40px,6vw,80px)",
+                maxWidth: "520px",
+                margin: "0 auto",
+                marginBottom: "clamp(40px,6vw,64px)",
               }}
             >
               We supply supermarkets, hypermarkets, hotels, restaurants, cafés and distributors across the UAE with competitive wholesale pricing and reliable logistics.
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
               <a
                 href="https://wa.me/971504622865?text=Hello%20Al%20Mahmasani%2C%20I%27d%20like%20to%20enquire%20about%20wholesale%20pricing."
                 target="_blank"

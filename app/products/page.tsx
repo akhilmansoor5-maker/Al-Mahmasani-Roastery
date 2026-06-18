@@ -235,7 +235,7 @@ function Modal({ product, onClose }: { product: Product; onClose: () => void }) 
             <X size={16} />
           </button>
           <div className="absolute top-4 left-4 text-[9px] tracking-[0.3em] uppercase px-3 py-1.5 font-medium"
-            style={{ background: "var(--gold-mid)", color: "#000", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
+            style={{ background: "#111111", color: "#fff", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
             {product.tag}
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function ProductsPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 pt-32 page-enter">
-          <p className="section-label block mb-4">Our Selection</p>
+          <p className="section-label block mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>Our Selection</p>
           <h1 className="text-white font-light leading-tight" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3rem,7vw,5.5rem)" }}>
             Premium<br />
             <span className="gold-text">Products</span>
@@ -404,30 +404,29 @@ export default function ProductsPage() {
                 {filtered.map((p, i) => (
                   <AnimatedSection key={p.id} delay={i * 40}>
                     <button onClick={() => setSelected(p)}
-                      className="group overflow-hidden text-left w-full h-full transition-all duration-300"
-                      style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-card)", background: "var(--bg-card)" }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--gold-mid)")}
+                      className="card group text-left w-full transition-all duration-300 flex flex-col"
+                      style={{ border: "1.5px solid var(--border)" }}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#111")}
                       onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
                     >
-                      <div className="relative h-52 img-zoom overflow-hidden"
-                        style={{ borderRadius: "calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px) 0 0" }}>
+                      <div className="card-img relative" style={{ height: "220px", flexShrink: 0 }}>
                         <Image src={p.image} alt={p.name} fill sizes="(max-width:640px) 100vw, (max-width:1280px) 50vw, 25vw" style={{ objectFit: "cover" }} />
                         <div className="absolute top-3 left-3 text-[9px] tracking-[0.25em] uppercase px-2.5 py-1 font-medium"
-                          style={{ background: "var(--gold-mid)", color: "#000", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
+                          style={{ background: "#111111", color: "#fff", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
                           {p.tag}
                         </div>
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-500 flex items-center justify-center">
                           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[10px] tracking-[0.3em] uppercase px-4 py-2 text-white"
-                            style={{ border: "1px solid rgba(255,255,255,0.5)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
+                            style={{ border: "1px solid rgba(255,255,255,0.6)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
                             View Details
                           </div>
                         </div>
                       </div>
-                      <div className="p-5">
-                        <p className="text-[9px] tracking-[0.4em] uppercase mb-1.5" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>{p.category}</p>
-                        <h3 className="font-light mb-2 leading-snug" style={{ fontFamily: "var(--serif)", fontSize: "1.05rem", color: "var(--text)" }}>{p.name}</h3>
-                        <p className="text-xs leading-relaxed mb-5 line-clamp-2" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{p.desc}</p>
-                        <div className="flex items-center justify-between">
+                      <div className="flex flex-col flex-1 p-6">
+                        <p className="text-[9px] tracking-[0.4em] uppercase mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>{p.category}</p>
+                        <h3 className="font-light mb-3 leading-snug" style={{ fontFamily: "var(--serif)", fontSize: "1.1rem", color: "var(--text)" }}>{p.name}</h3>
+                        <p className="text-xs leading-relaxed mb-5 line-clamp-2 flex-1" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{p.desc}</p>
+                        <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid var(--border)" }}>
                           <div className="flex gap-1.5 flex-wrap">
                             {p.sizes.slice(0, 3).map((s) => (
                               <span key={s} className="text-[9px] px-2 py-0.5"
@@ -435,10 +434,9 @@ export default function ProductsPage() {
                                 {s}
                               </span>
                             ))}
-                            {p.sizes.length > 3 && <span className="text-[9px] py-0.5" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>+{p.sizes.length - 3}</span>}
+                            {p.sizes.length > 3 && <span className="text-[9px]" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>+{p.sizes.length - 3}</span>}
                           </div>
-                          <ArrowRight size={14} className="transition-colors duration-200 flex-shrink-0"
-                            style={{ color: "var(--gold-mid)" }} />
+                          <ArrowRight size={14} className="flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" style={{ color: "var(--text)" }} />
                         </div>
                       </div>
                     </button>

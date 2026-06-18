@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Al Mahmasani Roasteries | Premium Nuts & Snacks Since 1975",
@@ -29,11 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ background: "#f7f2e8", color: "#1a1108" }}>
+      <body style={{ background: "#ffffff", color: "#0d0d0d" }}>
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );

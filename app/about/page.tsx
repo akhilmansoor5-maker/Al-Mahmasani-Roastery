@@ -56,13 +56,12 @@ export default function AboutPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 pt-32 page-enter">
-          <p className="section-label block mb-5">Who We Are</p>
+          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Who We Are</p>
           <h1
             className="text-white font-light leading-tight"
-            style={{ fontFamily: "var(--serif)", fontSize: "clamp(3rem, 8vw, 6rem)" }}
+            style={{ fontFamily: "var(--serif)", fontSize: "clamp(4rem, 10vw, 8rem)" }}
           >
-            Our<br />
-            <span className="gold-text">Story</span>
+            Our Story
           </h1>
         </div>
       </section>
@@ -106,7 +105,7 @@ export default function AboutPage() {
                   <Image src="/images/products/hazelnut-4.jpg" alt="Al Mahmasani Heritage" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 p-8 hidden lg:block" style={{ background: "var(--gold-mid)" }}>
+                <div className="absolute -bottom-6 -left-6 p-8 hidden lg:block" style={{ background: "#111111" }}>
                   <p className="text-black font-light" style={{ fontFamily: "var(--serif)", fontSize: "2.5rem" }}>1975</p>
                   <p className="text-black/65 text-[9px] tracking-[0.45em] uppercase mt-1" style={{ fontFamily: "var(--sans)" }}>Established</p>
                 </div>
