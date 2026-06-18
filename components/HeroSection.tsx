@@ -5,10 +5,10 @@ import Link from "next/link";
 import { Pause, Play } from "lucide-react";
 
 const slides = [
-  { src: "/images/cashew.jpg",    label: "Premium Cashews" },
-  { src: "/images/almond.jpg",    label: "Roasted Almonds" },
-  { src: "/images/pistachio.jpg", label: "Premium Pistachios" },
-  { src: "/images/peanut.jpg",    label: "Roasted Peanuts" },
+  { src: "/images/products/cashew-3.jpg",   label: "Premium Cashews" },
+  { src: "/images/products/almond-2.jpg",   label: "California Almonds" },
+  { src: "/images/products/coffee-3.jpg",   label: "Coffee Roasted Nuts" },
+  { src: "/images/products/pecan-1.jpg",    label: "Premium Pecans" },
 ];
 
 export default function HeroSection() {
@@ -51,7 +51,7 @@ export default function HeroSection() {
         ref={videoRef}
         autoPlay muted loop playsInline
         onLoadedData={() => setVideoLoaded(true)}
-        poster="/images/cashew.jpg"
+        poster="/images/products/cashew-3.jpg"
         className={`absolute inset-0 z-[1] w-full h-full object-cover transition-opacity duration-1000 ${
           videoLoaded ? "opacity-100" : "opacity-0"
         }`}

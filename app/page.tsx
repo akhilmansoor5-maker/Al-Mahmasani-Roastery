@@ -6,18 +6,18 @@ import HeroSection from "@/components/HeroSection";
 import PartnerSection from "@/components/PartnerSection";
 
 const categories = [
-  { name: "Cashews",     tag: "Premium Grade",      desc: "Buttery whole kernels. W240, W320 and jumbo grades.",  img: "/images/cashew.jpg",    href: "/products?cat=cashews" },
-  { name: "Almonds",     tag: "California & Local",  desc: "Natural, blanched, sliced and roasted varieties.",    img: "/images/almond.jpg",    href: "/products?cat=almonds" },
-  { name: "Pistachios",  tag: "Iranian & Turkish",   desc: "Long, round and jumbo grades. Raw or roasted.",       img: "/images/pistachio.jpg", href: "/products?cat=pistachios" },
-  { name: "Peanuts",     tag: "Wholesale Ready",     desc: "Roasted, salted and raw in bulk. Multiple origins.",  img: "/images/peanut.jpg",    href: "/products?cat=peanuts" },
-  { name: "Mixed Nuts",  tag: "Curated Blends",      desc: "Premium custom mixes of cashews, almonds, pistachios.",img: "/images/cashew.jpg",   href: "/products?cat=mixed-nuts" },
-  { name: "Dried Fruits",tag: "Sun-Dried",           desc: "Apricots, cranberries, mango, raisins and more.",    img: "/images/almond.jpg",    href: "/products?cat=dried-fruits" },
+  { name: "Cashews",    tag: "Premium Grade",     desc: "Buttery whole kernels. W240, W320 and jumbo grades.",          img: "/images/products/cashew-3.jpg",   href: "/products?cat=cashews" },
+  { name: "Almonds",    tag: "California & Local", desc: "Natural, blanched, sliced and roasted varieties.",            img: "/images/products/almond-2.jpg",   href: "/products?cat=almonds" },
+  { name: "Hazelnuts",  tag: "Turkish & Italian",  desc: "Premium whole and blanched hazelnuts. Raw or roasted.",       img: "/images/products/hazelnut-4.jpg", href: "/products?cat=hazelnuts" },
+  { name: "Pecans",     tag: "Texas & Georgia",    desc: "Large whole pecan halves. Ideal for bakery and gifting.",     img: "/images/products/pecan-1.jpg",    href: "/products?cat=pecans" },
+  { name: "Coffee Nuts",tag: "Artisan Roasts",     desc: "Coffee-roasted and flavoured nut blends for retail and café.", img: "/images/products/coffee-3.jpg",  href: "/products?cat=coffee-nuts" },
+  { name: "Mixed Nuts", tag: "Curated Blends",     desc: "Premium custom mixes of cashews, almonds and hazelnuts.",     img: "/images/products/almond-8.jpg",   href: "/products?cat=mixed-nuts" },
 ];
 
 const featured = [
-  { name: "Jumbo Cashews W240", cat: "Cashews",     img: "/images/cashew.jpg",    href: "/products" },
-  { name: "Iranian Pistachios", cat: "Pistachios",  img: "/images/pistachio.jpg", href: "/products" },
-  { name: "California Almonds", cat: "Almonds",     img: "/images/almond.jpg",    href: "/products" },
+  { name: "Jumbo Cashews W240",  cat: "Cashews",   img: "/images/products/cashew-2.jpg",   href: "/products" },
+  { name: "California Almonds",  cat: "Almonds",   img: "/images/products/almond-4.jpg",   href: "/products" },
+  { name: "Premium Hazelnuts",   cat: "Hazelnuts", img: "/images/products/hazelnut-2.jpg", href: "/products" },
 ];
 
 const partners = [
@@ -260,7 +260,7 @@ export default function Home() {
               <div style={{ position: "relative" }}>
                 <div className="img-zoom" style={{ aspectRatio: "3/4", borderRadius: "var(--radius-card)", overflow: "hidden" }}>
                   <Image
-                    src="/images/pistachio.jpg" alt="Heritage"
+                    src="/images/products/almond-6.jpg" alt="Heritage"
                     fill sizes="(max-width:1024px) 100vw, 50vw"
                     style={{ objectFit: "cover" }}
                   />
@@ -367,7 +367,7 @@ export default function Home() {
       <section className="relative overflow-hidden" style={{ minHeight: "70vh", display: "flex", alignItems: "center" }}>
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/cashew.jpg" alt="Wholesale enquiry" fill
+            src="/images/products/almond-8.jpg" alt="Wholesale enquiry" fill
             sizes="100vw"
             style={{ objectFit: "cover", opacity: 0.4 }}
           />
