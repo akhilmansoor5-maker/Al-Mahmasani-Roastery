@@ -8,35 +8,35 @@ const tabs = [
     label: "Supermarkets",
     headline: "Trusted by the UAE's\nleading supermarkets",
     body: "From major hypermarkets to boutique grocery chains, we supply consistent quality, competitive wholesale pricing and reliable delivery — the foundations every retailer needs.",
-    img: "/images/cashew.jpg",
+    img: "/images/products/cashew-3.jpg",
     cta: "Retail Partnership",
   },
   {
     label: "Hotels",
     headline: "In the world's finest\nhotel amenity spaces",
     body: "Five-star hotels and luxury hospitality groups across the UAE choose Al Mahmasani for premium nut selections for minibars, gifting, and F&B operations.",
-    img: "/images/pistachio.jpg",
+    img: "/images/products/hazelnut-4.jpg",
     cta: "Hospitality Supply",
   },
   {
     label: "Restaurants",
     headline: "Elevating kitchens\nand menus",
     body: "Chefs and F&B directors rely on our consistent quality for both front-of-house presentations and kitchen applications. Flexible quantities, reliable sourcing.",
-    img: "/images/almond.jpg",
+    img: "/images/products/almond-2.jpg",
     cta: "Restaurant Supply",
   },
   {
     label: "Cafés",
     headline: "Specialty café\ningredients",
     body: "From artisanal nut milks to premium café snacking ranges, our products integrate seamlessly into specialty café menus and retail offerings.",
-    img: "/images/peanut.jpg",
+    img: "/images/products/coffee-3.jpg",
     cta: "Café Partnership",
   },
   {
     label: "Distributors",
     headline: "Regional distribution\npartnerships",
     body: "We work with established FMCG distributors across the UAE and GCC to expand market reach. Competitive margins, quality product, proven demand.",
-    img: "/images/cashew.jpg",
+    img: "/images/products/pecan-1.jpg",
     cta: "Distribution Enquiry",
   },
 ];
@@ -48,13 +48,13 @@ export default function PartnerSection() {
   return (
     <section style={{ background: "var(--bg-2)", minHeight: "80vh", display: "flex", flexDirection: "column" }}>
       {/* Tab bar */}
-      <div style={{ borderBottom: "1.5px solid var(--border)", overflowX: "auto" }}>
+      <div style={{ borderBottom: "1.5px solid var(--border)", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
         <div
           style={{
-            maxWidth: "var(--container)",
+            maxWidth: "1400px",
             margin: "0 auto",
-            paddingLeft: "clamp(24px, 4vw, 80px)",
-            paddingRight: "clamp(24px, 4vw, 80px)",
+            paddingLeft: "clamp(20px, 5vw, 80px)",
+            paddingRight: "clamp(20px, 5vw, 80px)",
             display: "flex",
           }}
         >
@@ -63,6 +63,7 @@ export default function PartnerSection() {
               key={tab.label}
               onClick={() => setActive(i)}
               className={`partner-tab ${i === active ? "active" : ""}`}
+              style={{ fontSize: "clamp(9px, 1.5vw, 11px)", padding: "0.875rem clamp(0.75rem, 2vw, 1.5rem)", whiteSpace: "nowrap" }}
             >
               {tab.label}
             </button>
@@ -73,37 +74,28 @@ export default function PartnerSection() {
       {/* Content */}
       <div
         style={{
-          maxWidth: "var(--container)",
+          maxWidth: "1400px",
           margin: "0 auto",
           width: "100%",
           flex: 1,
-          paddingLeft: "clamp(24px, 4vw, 80px)",
-          paddingRight: "clamp(24px, 4vw, 80px)",
+          paddingLeft: "clamp(20px, 5vw, 80px)",
+          paddingRight: "clamp(20px, 5vw, 80px)",
         }}
       >
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, height: "100%", minHeight: "calc(80vh - 60px)" }}>
+        <div className="partner-content-grid">
 
           {/* Text column */}
-          <div
-            style={{
-              paddingTop: "120px",
-              paddingBottom: "120px",
-              paddingRight: "60px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
-            <span className="section-label" style={{ display: "block", marginBottom: "24px" }}>Become a Partner</span>
+          <div className="partner-text-col">
+            <span className="section-label" style={{ display: "block", marginBottom: "clamp(14px,2vw,24px)" }}>Become a Partner</span>
             <h2
               key={active}
               className="font-normal"
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: "clamp(3.25rem, 6vw, 4.5rem)",
+                fontSize: "clamp(2rem, 6vw, 4.5rem)",
                 lineHeight: "1.02",
                 color: "var(--text)",
-                marginBottom: "28px",
+                marginBottom: "clamp(16px,2.5vw,28px)",
                 animation: "hero-rise 0.6s cubic-bezier(0.16,1,0.3,1) both",
               }}
             >
@@ -114,11 +106,11 @@ export default function PartnerSection() {
             <p
               style={{
                 fontFamily: "var(--sans)",
-                fontSize: "18px",
+                fontSize: "clamp(15px,2vw,18px)",
                 lineHeight: "1.8",
                 color: "var(--text-muted)",
                 maxWidth: "480px",
-                marginBottom: "40px",
+                marginBottom: "clamp(24px,3vw,40px)",
               }}
             >
               {t.body}
@@ -132,7 +124,7 @@ export default function PartnerSection() {
             </Link>
           </div>
 
-          {/* Image column */}
+          {/* Image column — desktop only */}
           <div className="relative hidden lg:block" style={{ minHeight: "100%" }}>
             <Image
               key={active}

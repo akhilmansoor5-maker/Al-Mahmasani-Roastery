@@ -130,7 +130,7 @@ export default function HeroSection() {
               UAE&apos;s finest retailers, hotels and restaurants since 1975.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 hero-in-4">
+            <div className="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 opacity-0 hero-in-4">
               <Link href="/products" className="btn btn-gold text-[11px] tracking-[0.18em]">
                 Explore Products
               </Link>
