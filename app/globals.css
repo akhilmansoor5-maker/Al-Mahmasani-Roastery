@@ -343,6 +343,14 @@ img, video { display: block; max-width: 100%; }
 }
 .section-fade.visible { opacity: 1; transform: none; }
 
+.value-card {
+  border: 1.5px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  transition: border-color 0.3s;
+}
+.value-card:hover { border-color: var(--gold-mid); }
+
 /* ─────────────────────────────────────────────
    RESPONSIVE LAYOUT HELPERS
 ───────────────────────────────────────────── */

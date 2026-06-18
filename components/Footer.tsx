@@ -169,7 +169,7 @@ export default function Footer() {
               Products
             </h4>
             <ul className="space-y-3.5">
-              {["Cashews","Almonds","Pistachios","Mixed Nuts","Dried Fruits","Snack Mixes"].map((p) => (
+              {["Cashews","Almonds","Hazelnuts","Pecans","Coffee Nuts","Mixed Nuts"].map((p) => (
                 <li key={p}>
                   <Link
                     href="/products"

@@ -5,13 +5,12 @@ import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const categories = [
-  { label: "Cashews", href: "/products?cat=cashews" },
-  { label: "Almonds", href: "/products?cat=almonds" },
-  { label: "Pistachios", href: "/products?cat=pistachios" },
-  { label: "Peanuts", href: "/products?cat=peanuts" },
-  { label: "Mixed Nuts", href: "/products?cat=mixed-nuts" },
-  { label: "Dried Fruits", href: "/products?cat=dried-fruits" },
-  { label: "Seeds & Snacks", href: "/products?cat=seeds-snacks" },
+  { label: "Cashews",     href: "/products?cat=cashews" },
+  { label: "Almonds",     href: "/products?cat=almonds" },
+  { label: "Hazelnuts",   href: "/products?cat=hazelnuts" },
+  { label: "Pecans",      href: "/products?cat=pecans" },
+  { label: "Coffee Nuts", href: "/products?cat=coffee-nuts" },
+  { label: "Mixed Nuts",  href: "/products?cat=mixed-nuts" },
 ];
 
 export default function Navbar() {
