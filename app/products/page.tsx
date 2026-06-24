@@ -1,478 +1,301 @@
-"use client";
-import { useState } from "react";
 import Image from "next/image";
-import AnimatedSection from "@/components/AnimatedSection";
-import { Search, X, MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
-const WHATSAPP = "https://wa.me/971504622865";
+/* ────────────────────────────────────────────
+   PRODUCT DATA
+──────────────────────────────────────────── */
 
-const categories = ["All", "Cashews", "Almonds", "Hazelnuts", "Pecans", "Coffee Nuts", "Mixed Nuts"];
+/* Chocolate-Coated Nuts — Pecan (11) + Almond (8) */
+const chocolateProducts = [
+  { name: "Pecan Chocolate 1", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
+  { name: "Pecan Chocolate 2", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_mstiu0mstiu0msti.png" },
+  { name: "Pecan Chocolate 3", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_q5f1awq5f1awq5f1.png" },
+  { name: "Pecan Chocolate 4", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_vxzyb0vxzyb0vxzy.png" },
+  { name: "Pecan Chocolate 5", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_6see796see796see (1).png" },
+  { name: "Pecan Chocolate 6", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_64gus764gus764gu (1) (1).png" },
+  { name: "Pecan Chocolate 7", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_wewh3qwewh3qwewh (1).png" },
+  { name: "Pecan Chocolate 8", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_ydaskwydaskwydas.png" },
+  { name: "Pecan Chocolate 9", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_yubfqlyubfqlyubf (1).png" },
+  { name: "Pecan Chocolate 10", img: "/Images/Catalogue Photos/Pecan 2/55bf0020-d115-4536-b96a-be01d6a1f82f.png" },
+  { name: "Pecan Chocolate 11", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
+  { name: "Almond Chocolate 1", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png" },
+  { name: "Almond Chocolate 2", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_7rsipk7rsipk7rsi.png" },
+  { name: "Almond Chocolate 3", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp41iayp41iayp4.png" },
+  { name: "Almond Chocolate 4", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp688ayp688ayp6.png" },
+  { name: "Almond Chocolate 5", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_cfk48xcfk48xcfk4.png" },
+  { name: "Almond Chocolate 6", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_qshizzqshizzqshi.png" },
+  { name: "Almond Chocolate 7", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_vb7ezovb7ezovb7e.png" },
+  { name: "Almond Chocolate 8", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_xnbly1xnbly1xnbl.png" },
+];
 
-const products = [
-  // ─── CASHEWS ───
+/* Hazelnut Collection (7) */
+const hazelnutProducts = [
+  { name: "Hazelnut Premium 1", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
+  { name: "Hazelnut Premium 2", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
+  { name: "Hazelnut Premium 3", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
+  { name: "Hazelnut Premium 4", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_u86dsdu86dsdu86d.png" },
+  { name: "Hazelnut Premium 5", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
+  { name: "Hazelnut Premium 6", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
+  { name: "Hazelnut Premium 7", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
+];
+
+/* Cashew Collection (5) */
+const cashewProducts = [
+  { name: "Cashew Roasted Salted",   img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
+  { name: "Cashew Roasted Unsalted", img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png" },
+  { name: "Cashew Jumbo",            img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_jmh8w5jmh8w5jmh8.png" },
+  { name: "Cashew Butter Toffee",    img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_krelcykrelcykrel.png" },
+  { name: "Cashew Spiced",           img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_w35cxiw35cxiw35c.png" },
+];
+
+/* Coffee Collection (7) */
+const coffeeProducts = [
+  { name: "Coffee Almond Roast 1",   img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2cfk252cfk252cfk.png" },
+  { name: "Coffee Almond Roast 2",   img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
+  { name: "Coffee Cashew Blend",     img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_35xuo835xuo835xu.png" },
+  { name: "Coffee Pecan Glaze",      img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_3d9w513d9w513d9w.png" },
+  { name: "Espresso Hazelnut",       img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_49w10g49w10g49w1.png" },
+  { name: "Coffee Nut Mix",          img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_kjmce9kjmce9kjmc.png" },
+  { name: "Arabica Glazed Nuts",     img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_rf8iyerf8iyerf8i.png" },
+];
+
+/* Fruit Collection (6) — placeholder cards */
+const fruitProducts = [
+  { name: "Roasted Pistachio",    img: "/Images/Pistachio Roasted.jpg.jpeg" },
+  { name: "Premium Almonds",      img: "/Images/Almond Unsalted.jpg.jpeg" },
+  { name: "Roasted Peanuts",      img: "/Images/Peanut Roasted.jpg.jpeg" },
+  { name: "Dried Mango",          img: null },
+  { name: "Dried Cranberry",      img: null },
+  { name: "Mixed Dried Fruit",    img: null },
+];
+
+/* Savoury Collection */
+const savouryGroups = [
   {
-    id: 1, name: "Roasted Cashews W180", category: "Cashews",
-    image: "/images/products/cashew-1.jpg", tag: "Premium Grade",
-    desc: "Large whole cashews roasted to golden perfection. W180 is our finest grade — buttery, crunchy and consistently sized.",
-    sizes: ["250g", "500g", "1kg", "5kg", "10kg"],
-    details: "W180 refers to 180 cashews per pound — our largest, most premium grade. Sourced from select growing regions and roasted in-house to our exact specification. Ideal for luxury retail, gifting and premium food service.",
-    origin: "Vietnam / India",
+    label: "Cashew Kri Kri",
+    items: [
+      { name: "Cashew Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
+      { name: "Cashew Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 2.png" },
+      { name: "Cashew Kri Kri 3",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 3.png" },
+      { name: "Cashew Kri Kri 4",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 4.png" },
+      { name: "Cashew Kri Kri 5",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 5.png" },
+      { name: "Cashew Kri Kri 6",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 6.png" },
+      { name: "Cashew Kri Kri 7",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 7.png" },
+      { name: "Cashew Kri Kri 8",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 8.png" },
+      { name: "Cashew Kri Kri 9",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 9.png" },
+    ],
   },
   {
-    id: 2, name: "Roasted Cashews W210", category: "Cashews",
-    image: "/images/products/cashew-2.jpg", tag: "Best Seller",
-    desc: "Our most popular cashew grade. W210 offers the ideal balance of size, flavour and value for wholesale buyers.",
-    sizes: ["250g", "500g", "1kg", "5kg", "10kg", "25kg"],
-    details: "W210 cashews are the most in-demand grade across UAE retail and food service. Perfectly roasted with a satisfying crunch and buttery finish. Available in plain roasted, lightly salted and sea-salt variants.",
-    origin: "Vietnam / India",
+    label: "Cashew Cracker",
+    items: [
+      { name: "Cashew Cracker 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 10.png" },
+      { name: "Cashew Cracker 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 11.png" },
+      { name: "Cashew Cracker 3",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 12.png" },
+      { name: "Cashew Cracker 4",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 13.png" },
+      { name: "Cashew Cracker 5",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 14.png" },
+      { name: "Cashew Cracker 6",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 15.png" },
+    ],
   },
   {
-    id: 3, name: "Salted Cashews", category: "Cashews",
-    image: "/images/products/cashew-3.jpg", tag: "Popular",
-    desc: "Perfectly seasoned whole cashews with a fine sea-salt finish. A retail and hospitality staple.",
-    sizes: ["150g", "250g", "500g", "1kg", "5kg"],
-    details: "Our Salted Cashews are roasted and seasoned with fine sea salt in a precise ratio that enhances the natural sweetness without overpowering it. A perennial bestseller for hospitality, gifting and impulse retail.",
-    origin: "Vietnam / India",
+    label: "Almond Kri Kri",
+    items: [
+      { name: "Almond Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 1.png" },
+      { name: "Almond Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 2.png" },
+    ],
   },
   {
-    id: 4, name: "Raw Cashews", category: "Cashews",
-    image: "/images/products/cashew-4.jpg", tag: "Natural",
-    desc: "Unroasted whole cashews for food manufacturers, bakeries and health-conscious consumers.",
-    sizes: ["500g", "1kg", "5kg", "25kg"],
-    details: "Premium raw cashews suitable for food processing, confectionery production and direct retail. Available in W180, W210 and W240 grades on request.",
-    origin: "Vietnam / India",
-  },
-  // ─── ALMONDS ───
-  {
-    id: 5, name: "Roasted Almonds", category: "Almonds",
-    image: "/images/products/almond-1.jpg", tag: "Signature",
-    desc: "Whole almonds dry-roasted to a rich, nutty depth. A premium staple for retail and food service alike.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Our Roasted Almonds are slow-roasted to develop a deep, satisfying flavour with a crisp texture. Sourced from premium California and Australian orchards. No added oils — pure dry-roasted excellence.",
-    origin: "USA / Australia",
+    label: "Peanut Kri Kri",
+    items: [
+      { name: "Peanut Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
+      { name: "Peanut Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 2.png" },
+    ],
   },
   {
-    id: 6, name: "Natural Almonds", category: "Almonds",
-    image: "/images/products/almond-2.jpg", tag: "Premium",
-    desc: "Crisp, natural almonds with no added salt or oil. Perfect for health-oriented retail ranges.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Whole natural almonds with their skin intact, unroasted and unsalted. Rich in protein, fibre and vitamin E. Ideal for health food retailers, gym channels and premium snack subscription boxes.",
-    origin: "USA / Australia",
+    label: "Peanut Ball",
+    items: [
+      { name: "Peanut Ball 1",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 3.png" },
+      { name: "Peanut Ball 2",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 4.png" },
+      { name: "Peanut Ball 3",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 5.png" },
+    ],
   },
   {
-    id: 7, name: "Blanched Almonds", category: "Almonds",
-    image: "/images/products/almond-3.jpg", tag: "Food Service",
-    desc: "Skin-removed whole almonds ideal for confectionery, dessert production and bakery applications.",
-    sizes: ["500g", "1kg", "5kg", "25kg"],
-    details: "Blanched almonds with the skin removed, revealing a smooth white surface. Preferred by bakeries, confectioners and pastry chefs. Available whole, slivered and flaked on request.",
-    origin: "USA / Australia",
-  },
-  {
-    id: 8, name: "Salted Almonds", category: "Almonds",
-    image: "/images/products/almond-4.jpg", tag: "Popular",
-    desc: "Dry-roasted almonds with a light, even salt seasoning for a perfect snacking experience.",
-    sizes: ["150g", "250g", "500g", "1kg"],
-    details: "Our Salted Almonds combine the rich flavour of dry-roasted almonds with a light, precise salt seasoning. A top performer in UAE supermarkets and convenience retail.",
-    origin: "USA / Australia",
-  },
-  // ─── HAZELNUTS ───
-  {
-    id: 9, name: "Roasted Hazelnuts", category: "Hazelnuts",
-    image: "/images/products/hazelnut-1.jpg", tag: "Signature",
-    desc: "Whole hazelnuts roasted to bring out a rich, nutty depth. Beloved by confectioners and snack lovers alike.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Our Roasted Hazelnuts are sourced from premium Turkish growing regions — the world's leading hazelnut producer. Each nut is roasted to a deep golden finish, unlocking their natural oils for maximum flavour.",
-    origin: "Turkey",
-  },
-  {
-    id: 10, name: "Blanched Hazelnuts", category: "Hazelnuts",
-    image: "/images/products/hazelnut-2.jpg", tag: "Confectionery",
-    desc: "Skin-removed hazelnuts, perfect for pralines, chocolate production and premium patisserie work.",
-    sizes: ["500g", "1kg", "5kg", "25kg"],
-    details: "Blanched hazelnuts with the outer skin removed to reveal the smooth kernel underneath. The preferred choice for premium chocolate manufacturers, bakeries and confectioners across the UAE.",
-    origin: "Turkey",
-  },
-  {
-    id: 11, name: "Natural Hazelnuts", category: "Hazelnuts",
-    image: "/images/products/hazelnut-3.jpg", tag: "Natural",
-    desc: "Unroasted whole hazelnuts with skin intact — full flavour, straight from the source.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Premium natural hazelnuts, unprocessed and packed fresh. Ideal for consumers who prefer to roast at home, or for food manufacturers who require raw input. Consistent grade and size throughout.",
-    origin: "Turkey",
-  },
-  {
-    id: 12, name: "Salted Hazelnuts", category: "Hazelnuts",
-    image: "/images/products/hazelnut-4.jpg", tag: "Popular",
-    desc: "Roasted hazelnuts with a delicate sea-salt finish — a premium snacking product with excellent retail performance.",
-    sizes: ["150g", "250g", "500g", "1kg"],
-    details: "Our Salted Hazelnuts take the deep, toasted character of roasted hazelnuts and elevate it with a precise, light sea-salt seasoning. A strong performer in UAE premium retail and hotel minibar ranges.",
-    origin: "Turkey",
-  },
-  // ─── PECANS ───
-  {
-    id: 13, name: "Roasted Pecans", category: "Pecans",
-    image: "/images/products/pecan-1.jpg", tag: "Premium",
-    desc: "Whole pecan halves dry-roasted to develop a rich, buttery depth. A luxury retail staple.",
-    sizes: ["250g", "500g", "1kg"],
-    details: "Our Roasted Pecans are sourced from premium American growing regions and slow-roasted to develop their signature buttery, caramel-like flavour. A top-performing product in luxury gifting and premium retail.",
-    origin: "USA",
-  },
-  {
-    id: 14, name: "Natural Pecans", category: "Pecans",
-    image: "/images/products/pecan-2.jpg", tag: "Whole Halves",
-    desc: "Unroasted pecan halves — exceptional quality, consistent sizing, ideal for baking and confectionery.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Premium pecan halves, unroasted, sourced from select American farms. Their rich, buttery flavour makes them a favourite of pastry chefs and bakers across the UAE. Available in mammoth and standard grade.",
-    origin: "USA",
-  },
-  {
-    id: 15, name: "Salted Pecans", category: "Pecans",
-    image: "/images/products/pecan-3.jpg", tag: "Popular",
-    desc: "Buttery pecan halves lightly seasoned with sea salt — an indulgent snack for premium retail.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Our Salted Pecans combine the natural richness of dry-roasted pecans with a light sea-salt finish. Consistently popular in luxury supermarkets, hotel amenity spaces and corporate gifting.",
-    origin: "USA",
-  },
-  {
-    id: 16, name: "Candied Pecans", category: "Pecans",
-    image: "/images/products/pecan-4.jpg", tag: "Specialty",
-    desc: "Glazed pecan halves with a delicate caramel coating — a premium gifting and dessert ingredient.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Our Candied Pecans are coated in a fine caramel glaze and slowly baked to a crisp finish. A highly premium product positioned for luxury gifting, five-star hotel service and high-end dessert menus.",
-    origin: "UAE",
-  },
-  // ─── COFFEE NUTS ───
-  {
-    id: 17, name: "Coffee Roasted Cashews", category: "Coffee Nuts",
-    image: "/images/products/coffee-1.jpg", tag: "Signature",
-    desc: "Cashews roasted with a rich espresso coating — a sophisticated fusion of two premium ingredients.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Our Coffee Roasted Cashews pair premium W210 cashews with a real espresso coating roasted to a deep, aromatic finish. A distinctive product for specialty cafés, premium gifting and luxury retail.",
-    origin: "UAE",
-  },
-  {
-    id: 18, name: "Coffee Roasted Almonds", category: "Coffee Nuts",
-    image: "/images/products/coffee-2.jpg", tag: "Popular",
-    desc: "Whole almonds with a bold coffee roast coating. A standout product for café-focused retail.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Premium California almonds coated in a rich coffee blend and slow-roasted for an even finish. Our best-selling coffee nut variety. Ideal for café counters, specialty food retailers and corporate gifting.",
-    origin: "UAE",
-  },
-  {
-    id: 19, name: "Coffee Mixed Nuts", category: "Coffee Nuts",
-    image: "/images/products/coffee-3.jpg", tag: "Premium Blend",
-    desc: "A curated blend of coffee-roasted cashews, almonds and hazelnuts. Bold, aromatic and deeply satisfying.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Our Coffee Mixed Nuts selection brings together three premium nut varieties united by a consistent, bold espresso roast. Ideal for artisan café retail, luxury gifting and discerning snack buyers.",
-    origin: "UAE",
-  },
-  {
-    id: 20, name: "Espresso Hazelnuts", category: "Coffee Nuts",
-    image: "/images/products/coffee-4.jpg", tag: "Specialty",
-    desc: "Whole hazelnuts wrapped in an espresso glaze — an exceptional pairing born in Italian confectionery tradition.",
-    sizes: ["150g", "250g", "500g"],
-    details: "Inspired by the classic Italian combination of coffee and hazelnuts. Our Espresso Hazelnuts are coated in a real espresso blend and roasted to a deep, even finish. A premium product for discerning retail channels.",
-    origin: "UAE",
-  },
-  // ─── MIXED NUTS ───
-  {
-    id: 21, name: "Premium Mixed Nuts", category: "Mixed Nuts",
-    image: "/images/products/cashew-5.jpg", tag: "Popular",
-    desc: "A curated blend of cashews, almonds, hazelnuts and pecans — our most versatile mixed nut offering.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Our Premium Mixed Nuts bring together our finest cashews, almonds and hazelnuts in a carefully balanced blend. Each mix is packed fresh to ensure maximum quality and shelf life.",
-    origin: "Blended in UAE",
-  },
-  {
-    id: 22, name: "Deluxe Nut Mix", category: "Mixed Nuts",
-    image: "/images/products/almond-5.jpg", tag: "Luxury",
-    desc: "Our most elevated nut mix — macadamia, cashews, almonds, pecans and hazelnuts for discerning retail.",
-    sizes: ["250g", "500g", "1kg"],
-    details: "The Deluxe Nut Mix is our flagship premium blend, featuring whole macadamia nuts, W180 cashews, premium almonds and golden pecans. Designed for luxury gifting and five-star hospitality.",
-    origin: "Blended in UAE",
-  },
-  {
-    id: 23, name: "Cocktail Nut Mix", category: "Mixed Nuts",
-    image: "/images/products/almond-6.jpg", tag: "Classic",
-    desc: "A salted, mixed-nut blend crafted for bars, lounges and hospitality service across the UAE.",
-    sizes: ["250g", "500g", "1kg", "5kg"],
-    details: "Specially formulated for hospitality use. Our Cocktail Nut Mix includes a balanced proportion of cashews, almonds and hazelnuts, lightly salted for a complementary snacking experience in bar and lounge settings.",
-    origin: "Blended in UAE",
-  },
-  {
-    id: 24, name: "Coffee Nut Mix", category: "Mixed Nuts",
-    image: "/images/products/coffee-5.jpg", tag: "Specialty",
-    desc: "Coffee-roasted cashews, almonds and hazelnuts in one bold blend — a premium gift and café product.",
-    sizes: ["150g", "250g", "500g"],
-    details: "A premium blend bringing together our three most popular coffee-roasted nut varieties. Perfect for specialty cafés, artisan food retailers and premium gifting. A strong impulse purchase product.",
-    origin: "Blended in UAE",
+    label: "Sunflower Cracker",
+    items: [
+      { name: "Sunflower Cracker 1", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 1.png" },
+      { name: "Sunflower Cracker 2", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 2.png" },
+      { name: "Sunflower Cracker 3", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 3.png" },
+      { name: "Sunflower Cracker 4", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 4.png" },
+      { name: "Sunflower Cracker 5", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 5.png" },
+      { name: "Sunflower Cracker 6", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 6.png" },
+    ],
   },
 ];
 
-interface Product {
-  id: number; name: string; category: string; image: string; tag: string;
-  desc: string; sizes: string[]; details: string; origin: string;
-}
-
-function Modal({ product, onClose }: { product: Product; onClose: () => void }) {
+/* ── Reusable card ── */
+function ProductCard({ name, img }: { name: string; img: string | null }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(10,7,2,0.85)" }} onClick={onClose}>
-      <div
-        className="max-w-2xl w-full max-h-[92vh] overflow-y-auto"
-        style={{ background: "var(--bg-card)", border: "1.5px solid var(--border)", borderRadius: "var(--radius-card)" }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative h-72 overflow-hidden" style={{ borderRadius: "var(--radius-card) var(--radius-card) 0 0" }}>
-          <Image src={product.image} alt={product.name} fill sizes="672px" style={{ objectFit: "cover" }} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg-card) 0%, transparent 60%)" }} />
-          <button onClick={onClose}
-            className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center transition-all duration-200"
-            style={{ background: "rgba(247,242,232,0.85)", border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--text)" }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--gold-mid)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
-          >
-            <X size={16} />
-          </button>
-          <div className="absolute top-4 left-4 text-[9px] tracking-[0.3em] uppercase px-3 py-1.5 font-medium"
-            style={{ background: "#111111", color: "#fff", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
-            {product.tag}
+    <div className="card" style={{ background: "white" }}>
+      <div className="card-img" style={{ height: "220px", position: "relative" }}>
+        {img ? (
+          <Image src={img} alt={name} fill sizes="320px" style={{ objectFit: "cover" }} />
+        ) : (
+          <div className="card-placeholder" style={{ height: "220px" }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
           </div>
-        </div>
-
-        <div style={{ padding: "40px" }}>
-          <p className="text-[10px] tracking-[0.4em] uppercase mb-3" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>{product.category}</p>
-          <h2 className="font-light mb-3" style={{ fontFamily: "var(--serif)", fontSize: "1.875rem", color: "var(--text)" }}>{product.name}</h2>
-          <p className="text-[10px] tracking-[0.3em] uppercase mb-7" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Origin: {product.origin}</p>
-          <p className="text-sm leading-relaxed mb-10" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{product.details}</p>
-
-          <div className="mb-10">
-            <p className="text-[10px] tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Pack Sizes Available</p>
-            <div className="flex flex-wrap gap-2.5">
-              {product.sizes.map((s) => (
-                <span key={s} className="text-xs px-4 py-2"
-                  style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <a
-            href={`${WHATSAPP}?text=${encodeURIComponent(`Hello Al Mahmasani Roasteries,\n\nI am interested in ${product.name}.\n\nPlease provide pricing and availability for wholesale orders.\n\nThank you.`)}`}
-            target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white text-[10px] tracking-[0.22em] uppercase hover:bg-[#20ba59] transition-all duration-300 font-semibold"
-            style={{ fontFamily: "var(--sans)", borderRadius: "var(--radius-btn)", padding: "0.875rem 2.5rem" }}
-          >
-            <MessageCircle size={14} />
-            Enquire on WhatsApp
-          </a>
-        </div>
+        )}
+      </div>
+      <div style={{ padding: "16px 20px 20px" }}>
+        <p style={{ fontFamily: "var(--serif)", fontSize: "1.05rem", color: "var(--dark)", marginBottom: "12px" }}>{name}</p>
+        <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer"
+          style={{ fontFamily: "var(--sans)", fontSize: "12px", color: "var(--gold)", fontWeight: 500, letterSpacing: "0.06em" }}>
+          Enquire via WhatsApp →
+        </a>
       </div>
     </div>
   );
 }
 
+/* ── Section header ── */
+function CategorySection({ id, eyebrow, title, desc, children }: {
+  id: string; eyebrow: string; title: string; desc: string; children: React.ReactNode;
+}) {
+  return (
+    <section id={id} className="section-pad" style={{ borderBottom: "1px solid var(--border)" }}>
+      <div className="container">
+        <div style={{ marginBottom: "48px" }}>
+          <p className="eyebrow" style={{ marginBottom: "12px" }}>{eyebrow}</p>
+          <h2 className="display-lg" style={{ color: "var(--dark)", marginBottom: "16px" }}>{title}</h2>
+          <p className="body-lg" style={{ maxWidth: "560px" }}>{desc}</p>
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function ProductsPage() {
-  const [search, setSearch] = useState("");
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [selected, setSelected] = useState<Product | null>(null);
-  const [showFilters, setShowFilters] = useState(false);
-
-  const filtered = products.filter((p) => {
-    const matchesCat = activeCategory === "All" || p.category === activeCategory;
-    const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || p.category.toLowerCase().includes(search.toLowerCase());
-    return matchesCat && matchesSearch;
-  });
-
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[520px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/products/cashew-3.jpg" alt="Products" fill sizes="100vw" style={{ objectFit: "cover" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/70 to-black/40" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 30%)" }} />
+      <section style={{ minHeight: "50vh", position: "relative", display: "flex", alignItems: "flex-end", paddingBottom: "60px" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <Image src="/Images/Almond Unsalted.jpg.jpeg" alt="Products" fill sizes="100vw" style={{ objectFit: "cover" }} />
+          <div style={{ position: "absolute", inset: 0, background: "rgba(28,18,8,0.75)" }} />
         </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 pb-20 pt-36 page-enter">
-          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Our Selection</p>
-          <h1 className="text-white font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3.5rem,8vw,6.5rem)", lineHeight: 1 }}>
-            Premium Products
+        <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "140px" }}>
+          <p className="eyebrow hero-in-1" style={{ marginBottom: "16px" }}>Our Collections</p>
+          <h1 className="display-xl hero-in-2" style={{ color: "white", maxWidth: "640px", marginBottom: "20px" }}>
+            Premium Nuts &amp;<br />Artisan Snacks
           </h1>
-          <p className="text-white/55 text-sm mt-6 max-w-md" style={{ fontFamily: "var(--sans)", lineHeight: 1.7 }}>
-            {products.length}+ products across {categories.length - 1} categories — wholesale-ready, UAE-wide.
+          <p className="body-lg hero-in-3" style={{ color: "rgba(255,255,255,0.65)", maxWidth: "480px", marginBottom: "36px" }}>
+            200+ SKUs across 7 curated categories. All available for wholesale enquiry.
           </p>
-        </div>
-      </section>
-
-      {/* Filter Bar */}
-      <section className="py-5 sticky top-[60px] z-30" style={{ background: "var(--bg-card)", borderBottom: "1px solid var(--border)" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-            {/* Desktop categories */}
-            <div className="hidden md:flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button key={cat} onClick={() => setActiveCategory(cat)}
-                  className="text-[10px] tracking-[0.25em] uppercase px-5 py-2 transition-all duration-200"
-                  style={{
-                    fontFamily: "var(--sans)",
-                    border: "1.5px solid",
-                    borderRadius: "var(--radius-btn)",
-                    borderColor: activeCategory === cat ? "var(--gold-mid)" : "var(--border)",
-                    background: activeCategory === cat ? "var(--gold-mid)" : "transparent",
-                    color: activeCategory === cat ? "#000" : "var(--text-muted)",
-                    fontWeight: activeCategory === cat ? 600 : 400,
-                  }}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile filter toggle */}
-            <button className="md:hidden flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase px-4 py-2.5 transition-all"
-              onClick={() => setShowFilters(!showFilters)}
-              style={{ fontFamily: "var(--sans)", border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--text-muted)" }}>
-              Filter: {activeCategory} <ChevronDown size={13} className={`transition-transform ${showFilters ? "rotate-180" : ""}`} />
-            </button>
-
-            {/* Search */}
-            <div className="relative w-full md:w-56">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2" size={14} style={{ color: "var(--text-faint)" }} />
-              <input type="text" placeholder="Search products..." value={search} onChange={(e) => setSearch(e.target.value)}
-                className="w-full text-sm pl-9 pr-8 py-2.5 outline-none transition-colors duration-200"
-                style={{
-                  fontFamily: "var(--sans)",
-                  background: "var(--bg)",
-                  border: "1.5px solid var(--border)",
-                  borderRadius: "var(--radius-btn)",
-                  color: "var(--text)",
-                }}
-                onFocus={(e) => (e.target.style.borderColor = "var(--gold-mid)")}
-                onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
-              />
-              {search && (
-                <button onClick={() => setSearch("")} className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors" style={{ color: "var(--text-faint)" }}>
-                  <X size={13} />
-                </button>
-              )}
-            </div>
+          {/* Quick nav pills */}
+          <div className="hero-in-4" style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+            {["#chocolate","#hazelnut","#cashew","#coffee","#fruit","#savoury","#mixed"].map((h, i) => {
+              const labels = ["Chocolate","Hazelnut","Cashew","Coffee","Fruit","Savoury","Mixed"];
+              return (
+                <a key={h} href={h} className="btn btn-outline-white" style={{ fontSize: "13px", padding: "9px 18px" }}>
+                  {labels[i]}
+                </a>
+              );
+            })}
           </div>
-
-          {/* Mobile filter dropdown */}
-          {showFilters && (
-            <div className="md:hidden flex flex-wrap gap-2 pt-4">
-              {categories.map((cat) => (
-                <button key={cat} onClick={() => { setActiveCategory(cat); setShowFilters(false); }}
-                  className="text-[10px] tracking-[0.25em] uppercase px-4 py-2 transition-all duration-200"
-                  style={{
-                    fontFamily: "var(--sans)",
-                    border: "1.5px solid",
-                    borderRadius: "var(--radius-btn)",
-                    borderColor: activeCategory === cat ? "var(--gold-mid)" : "var(--border)",
-                    background: activeCategory === cat ? "var(--gold-mid)" : "transparent",
-                    color: activeCategory === cat ? "#000" : "var(--text-muted)",
-                  }}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="section-pad">
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          {filtered.length === 0 ? (
-            <div className="text-center py-28">
-              <p className="text-lg mb-4" style={{ fontFamily: "var(--serif)", color: "var(--text-muted)" }}>No products found</p>
-              <button onClick={() => { setSearch(""); setActiveCategory("All"); }}
-                className="text-xs tracking-widest uppercase hover:underline" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>
-                Clear filters
-              </button>
-            </div>
-          ) : (
-            <>
-              <p className="text-xs tracking-[0.3em] uppercase mb-10" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>
-                {filtered.length} product{filtered.length !== 1 ? "s" : ""} {activeCategory !== "All" ? `in ${activeCategory}` : ""}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                {filtered.map((p, i) => (
-                  <AnimatedSection key={p.id} delay={i * 40}>
-                    <button onClick={() => setSelected(p)}
-                      className="card group text-left w-full transition-all duration-300 flex flex-col"
-                      style={{ border: "1.5px solid var(--border)" }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "#111")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
-                    >
-                      <div className="card-img relative" style={{ height: "220px", flexShrink: 0 }}>
-                        <Image src={p.image} alt={p.name} fill sizes="(max-width:640px) 100vw, (max-width:1280px) 50vw, 25vw" style={{ objectFit: "cover" }} />
-                        <div className="absolute top-3 left-3 text-[9px] tracking-[0.25em] uppercase px-2.5 py-1 font-medium"
-                          style={{ background: "#111111", color: "#fff", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
-                          {p.tag}
-                        </div>
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-500 flex items-center justify-center">
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[10px] tracking-[0.3em] uppercase px-4 py-2 text-white"
-                            style={{ border: "1px solid rgba(255,255,255,0.6)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)" }}>
-                            View Details
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col flex-1" style={{ padding: "28px" }}>
-                        <p className="text-[9px] tracking-[0.4em] uppercase mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>{p.category}</p>
-                        <h3 className="font-light mb-3 leading-snug" style={{ fontFamily: "var(--serif)", fontSize: "1.1rem", color: "var(--text)" }}>{p.name}</h3>
-                        <p className="text-xs leading-relaxed mb-5 line-clamp-2 flex-1" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{p.desc}</p>
-                        <div className="flex items-center justify-between pt-3" style={{ borderTop: "1px solid var(--border)" }}>
-                          <div className="flex gap-1.5 flex-wrap">
-                            {p.sizes.slice(0, 3).map((s) => (
-                              <span key={s} className="text-[9px] px-2 py-0.5"
-                                style={{ border: "1px solid var(--border)", borderRadius: "var(--radius-btn)", fontFamily: "var(--sans)", color: "var(--text-faint)" }}>
-                                {s}
-                              </span>
-                            ))}
-                            {p.sizes.length > 3 && <span className="text-[9px]" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>+{p.sizes.length - 3}</span>}
-                          </div>
-                          <ArrowRight size={14} className="flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" style={{ color: "var(--text)" }} />
-                        </div>
-                      </div>
-                    </button>
-                  </AnimatedSection>
-                ))}
+      {/* ── Chocolate-Coated Nuts ── */}
+      <CategorySection id="chocolate" eyebrow="Collection 01" title="Chocolate-Coated Nuts"
+        desc="Belgian chocolate meets artisan-roasted nuts. Available in milk, dark and white chocolate finishes.">
+        <div className="grid-4">
+          {chocolateProducts.map((p) => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </CategorySection>
+
+      {/* ── Hazelnut Collection ── */}
+      <CategorySection id="hazelnut" eyebrow="Collection 02" title="Hazelnut Collection"
+        desc="Premium Turkish hazelnuts roasted to golden perfection. Available raw, roasted, salted, and honey-glazed.">
+        <div className="grid-4">
+          {hazelnutProducts.map((p) => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </CategorySection>
+
+      {/* ── Cashew Collection ── */}
+      <CategorySection id="cashew" eyebrow="Collection 03" title="Cashew Collection"
+        desc="Our best-selling whole cashews. Sourced from Vietnam and India, roasted in-house for peak freshness.">
+        <div className="grid-4">
+          {cashewProducts.map((p) => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </CategorySection>
+
+      {/* ── Coffee Collection ── */}
+      <CategorySection id="coffee" eyebrow="Collection 04" title="Coffee Collection"
+        desc="Arabica coffee glazes and espresso coatings applied to premium nuts. A category-defining range for specialty retailers.">
+        <div className="grid-4">
+          {coffeeProducts.map((p) => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </CategorySection>
+
+      {/* ── Fruit Collection ── */}
+      <CategorySection id="fruit" eyebrow="Collection 05" title="Fruit Collection"
+        desc="Roasted and dried premium fruits. Naturally sweetened, no added preservatives.">
+        <div className="grid-4">
+          {fruitProducts.map((p) => <ProductCard key={p.name} name={p.name} img={p.img} />)}
+        </div>
+      </CategorySection>
+
+      {/* ── Savoury Collection ── */}
+      <section id="savoury" className="section-pad" style={{ borderBottom: "1px solid var(--border)" }}>
+        <div className="container">
+          <div style={{ marginBottom: "48px" }}>
+            <p className="eyebrow" style={{ marginBottom: "12px" }}>Collection 06</p>
+            <h2 className="display-lg" style={{ color: "var(--dark)", marginBottom: "16px" }}>Savoury Collection</h2>
+            <p className="body-lg" style={{ maxWidth: "560px" }}>Kri Kri flavoured nuts, crackers, and peanut balls. Bold savory flavours crafted for snack-forward retail shelves.</p>
+          </div>
+          {savouryGroups.map((group) => (
+            <div key={group.label} style={{ marginBottom: "52px" }}>
+              <p style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--dark)", marginBottom: "24px", paddingBottom: "12px", borderBottom: "1px solid var(--border)" }}>{group.label}</p>
+              <div className="grid-4">
+                {group.items.map((p) => <ProductCard key={p.name} {...p} />)}
               </div>
-            </>
-          )}
-        </div>
-      </section>
-
-      {/* Wholesale CTA */}
-      <section className="section-pad-md" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border)" }}>
-        <div className="max-w-4xl mx-auto text-center" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <AnimatedSection>
-            <p className="section-label block mb-5">Wholesale Enquiries</p>
-            <h2 className="font-light mb-6" style={{ fontFamily: "var(--serif)", fontSize: "clamp(2rem,4vw,3rem)", color: "var(--text)" }}>
-              Looking for Bulk Orders?
-            </h2>
-            <p className="text-sm leading-relaxed mb-10 max-w-lg mx-auto" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-              We offer flexible wholesale solutions for businesses of all sizes — from independent retailers to national supermarket chains. Contact us to discuss pricing, MOQs and delivery.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
-                className="btn btn-gold inline-flex items-center justify-center gap-3 text-[11px] tracking-[0.18em]">
-                <MessageCircle size={15} />
-                WhatsApp for Pricing
-              </a>
-              <a href="/contact" className="btn btn-outline-gold text-[11px] tracking-[0.18em] text-center">
-                Send Enquiry Form
-              </a>
             </div>
-          </AnimatedSection>
+          ))}
         </div>
       </section>
 
-      {selected && <Modal product={selected} onClose={() => setSelected(null)} />}
+      {/* ── Mixed Nuts ── */}
+      <CategorySection id="mixed" eyebrow="Collection 07" title="Mixed Nuts"
+        desc="Signature blends combining the best of our roastery. Custom blend ratios available for wholesale partners.">
+        <div className="grid-4">
+          {[
+            { name: "Classic Mixed Nuts",     img: "/Images/Peanut Roasted.jpg.jpeg" },
+            { name: "Premium Deluxe Mix",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 16.png" },
+            { name: "Roasted Mixed Selection",img: "/Images/cashew roasted.jpg.jpeg" },
+            { name: "Party Mix",              img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
+          ].map((p) => <ProductCard key={p.name} {...p} />)}
+        </div>
+      </CategorySection>
+
+      {/* CTA */}
+      <section className="section-pad" style={{ background: "var(--dark)" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="eyebrow" style={{ marginBottom: "16px" }}>Wholesale Enquiries</p>
+          <h2 className="display-lg" style={{ color: "white", marginBottom: "20px" }}>Interested in Any Product?</h2>
+          <p className="body-lg" style={{ color: "rgba(255,255,255,0.6)", maxWidth: "440px", margin: "0 auto 36px" }}>
+            Contact us for MOQs, pricing sheets, and custom blend options.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+              Get a Quote on WhatsApp →
+            </a>
+            <Link href="/contact" className="btn btn-outline-white">Send Email Enquiry</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

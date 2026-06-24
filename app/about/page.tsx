@@ -1,254 +1,144 @@
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedSection from "@/components/AnimatedSection";
-import { MessageCircle, ArrowRight } from "lucide-react";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us | Al Mahmasani Roasteries",
-  description: "The story of Al Mahmasani Roasteries — a UAE family-owned wholesale supplier of premium nuts and snack products established in 1975.",
-};
 
 const timeline = [
-  { year: "1975", title: "The Beginning", event: "Al Mahmasani Roasteries is founded in the United Arab Emirates as a family-operated nuts and snacks supplier." },
-  { year: "1985", title: "Retail Expansion", event: "Partnership agreements established with UAE supermarkets and hypermarkets. Distribution network begins to scale." },
-  { year: "1995", title: "Range Growth", event: "Product portfolio expands to include dried fruits, mixed nuts and speciality snack categories to meet evolving market demand." },
-  { year: "2005", title: "UAE-Wide Reach", event: "Full distribution achieved across all seven Emirates, serving hundreds of retail and food service accounts." },
-  { year: "2015", title: "Premium Positioning", event: "Brand repositioning to serve premium and luxury retail channels. Packaging modernised while preserving heritage quality." },
-  { year: "2025", title: "50 Years Strong", event: "Half a century of excellence. Al Mahmasani Roasteries celebrates 50 years as one of the UAE's most trusted food brands." },
+  { year: "1975", title: "Founded in Sharjah", desc: "Al Mahmasani Roasteries opens its first roasting facility in Sharjah Industrial Area, serving local markets." },
+  { year: "1985", title: "First Retail Partnerships", desc: "Secured supply agreements with Carrefour and Union Coop, marking our entry into modern retail." },
+  { year: "1998", title: "Expanded to Chocolate Coating", desc: "Launched our premium chocolate-coated nut line, now our most awarded product range." },
+  { year: "2008", title: "UAE-Wide Distribution", desc: "Established distribution network covering all seven emirates, serving 500+ retail locations." },
+  { year: "2015", title: "Kri Kri Savoury Launch", desc: "Introduced the Kri Kri flavoured snack line — a breakthrough product that redefined savoury nuts in the UAE." },
+  { year: "2024", title: "200+ SKUs Milestone", desc: "Today we supply over 200 premium SKUs to 1,000+ wholesale partners across hospitality, retail and e-commerce." },
 ];
 
 const values = [
-  {
-    num: "01",
-    title: "Quality Without Compromise",
-    desc: "Every product we supply is selected against strict quality criteria — for freshness, consistency and taste. We do not stock anything we would not be proud to serve ourselves.",
-  },
-  {
-    num: "02",
-    title: "Heritage & Trust",
-    desc: "Fifty years of experience is woven into everything we do — from how we source to how we serve. Our partners trust us because we have never broken that promise.",
-  },
-  {
-    num: "03",
-    title: "Partnership First",
-    desc: "We see our clients not as customers but as long-term partners. Their growth is our growth. Their challenges are challenges we solve together.",
-  },
-  {
-    num: "04",
-    title: "Reliable Supply",
-    desc: "Consistency in supply is as important as consistency in quality. We maintain stock levels that ensure our partners never face gaps on their shelves.",
-  },
+  { icon: "◈", title: "Craft & Consistency", desc: "Every batch is roasted to the same exacting specification. Our partners rely on perfect consistency, every order." },
+  { icon: "◇", title: "Sourced with Integrity", desc: "We partner directly with farms in Vietnam, Turkey, India and the US for full traceability and fair sourcing." },
+  { icon: "◉", title: "Innovation Driven", desc: "Our R&D team continuously develops new flavour profiles and formats to keep our partners ahead of trends." },
+  { icon: "◈", title: "Partnership First", desc: "We grow when our partners grow. Flexible MOQs, responsive support, and custom blend capabilities." },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[65vh] min-h-[480px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/products/almond-2.jpg" alt="About Al Mahmasani Roasteries" fill sizes="100vw" style={{ objectFit: "cover" }} priority />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/88 via-black/55 to-black/20" />
-          <div
-            className="absolute inset-0 bg-gradient-to-t to-transparent"
-            style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 40%)" }}
-          />
+      <section style={{ minHeight: "70vh", position: "relative", display: "flex", alignItems: "flex-end", paddingBottom: "80px" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <Image src="/Images/cashew roasted.jpg.jpeg" alt="About Al Mahmasani" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.2 }} />
+          <div style={{ position: "absolute", inset: 0, background: "var(--dark)" }} />
         </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 pt-32 page-enter">
-          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Who We Are</p>
-          <h1
-            className="text-white font-light leading-tight"
-            style={{ fontFamily: "var(--serif)", fontSize: "clamp(4rem, 10vw, 8rem)" }}
-          >
-            Our Story
+        <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "140px" }}>
+          <p className="eyebrow hero-in-1" style={{ marginBottom: "20px" }}>Our Story</p>
+          <h1 className="display-xl hero-in-2" style={{ color: "white", maxWidth: "680px", marginBottom: "24px" }}>
+            Five Decades of<br /><em style={{ color: "var(--gold)", fontStyle: "italic" }}>Absolute Craft.</em>
           </h1>
+          <p className="body-lg hero-in-3" style={{ color: "rgba(255,255,255,0.65)", maxWidth: "520px" }}>
+            From a single roastery in Sharjah to the UAE&#39;s most trusted wholesale nut supplier — built on craft, consistency and genuine partnerships.
+          </p>
         </div>
       </section>
 
-      {/* Company Story */}
-      <section className="section-pad">
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <div className="grid-heritage">
-            <AnimatedSection>
-              <span className="section-label block mb-5">Since 1975</span>
-              <h2
-                className="font-light leading-tight mb-8"
-                style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "var(--text)" }}
-              >
-                Five Decades of<br />
-                <span className="gold-text">Premium Excellence</span>
-              </h2>
-              <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                Al Mahmasani Roasteries was established in 1975 with a founding vision: to bring the finest quality nuts, dried fruits and snack products to the United Arab Emirates. What began as a small family operation has grown into one of the UAE&apos;s most trusted wholesale food suppliers.
-              </p>
-              <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                Over five decades, we have built enduring relationships with retailers, supermarkets, restaurants, hotels and businesses across all seven Emirates. Our partners choose us because we have never compromised on the principles that defined us from day one: quality, consistency and genuine care for the people we serve.
-              </p>
-              <p className="text-sm leading-relaxed mb-10" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                Today, Al Mahmasani Roasteries remains proudly family-owned — honouring its heritage while meeting the evolving needs of modern UAE businesses.
-              </p>
-              <a
-                href="https://wa.me/971504622865"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase hover:gap-4 transition-all duration-300 group"
-                style={{ color: "var(--gold-mid)", fontFamily: "var(--sans)" }}
-              >
-                Partner With Us <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </AnimatedSection>
+      {/* Story section */}
+      <section id="story" className="section-pad" style={{ background: "var(--cream)" }}>
+        <div className="container grid-2">
+          <div>
+            <p className="eyebrow" style={{ marginBottom: "20px" }}>Est. 1975</p>
+            <h2 className="display-lg" style={{ color: "var(--dark)", marginBottom: "24px" }}>
+              Born from a Passion<br />for the Perfect Roast
+            </h2>
+            <p className="body-lg" style={{ marginBottom: "20px" }}>
+              In 1975, our founder set up a small roasting facility in Sharjah with a single belief: that premium nuts, roasted with care and consistency, could transform a business. Fifty years later, that belief drives everything we do.
+            </p>
+            <p className="body-lg" style={{ marginBottom: "32px" }}>
+              Today, Al Mahmasani Roasteries supplies over 1,000 wholesale partners — from leading supermarket chains to boutique hotels — with 200+ SKUs across seven distinct product categories.
+            </p>
+            <Link href="/products" className="btn btn-dark">Explore Our Products</Link>
+          </div>
+          <div style={{ position: "relative", height: "500px", borderRadius: "var(--radius-card)", overflow: "hidden" }}>
+            <Image src="/Images/Almond Unsalted.jpg.jpeg" alt="Our roastery" fill sizes="600px" style={{ objectFit: "cover" }} />
+          </div>
+        </div>
+      </section>
 
-            <AnimatedSection delay={180}>
-              <div className="relative">
-                <div className="relative h-[480px] img-zoom overflow-hidden" style={{ borderRadius: "var(--radius-card)" }}>
-                  <Image src="/images/products/hazelnut-4.jpg" alt="Al Mahmasani Heritage" fill sizes="(max-width:1024px) 100vw, 50vw" style={{ objectFit: "cover" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+      {/* Dark timeline */}
+      <section id="heritage" className="section-pad" style={{ background: "var(--dark)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <p className="eyebrow" style={{ marginBottom: "16px" }}>Our Journey</p>
+            <h2 className="display-lg" style={{ color: "white" }}>Five Decades of Growth</h2>
+          </div>
+          <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+            {timeline.map((item, i) => (
+              <div key={i} className="timeline-item">
+                <div>
+                  <p style={{ fontFamily: "var(--serif)", fontSize: "2rem", fontWeight: 300, color: "var(--gold)", lineHeight: 1 }}>{item.year}</p>
                 </div>
-                <div className="absolute -bottom-6 -left-6 p-8 hidden lg:block" style={{ background: "#111111" }}>
-                  <p className="text-black font-light" style={{ fontFamily: "var(--serif)", fontSize: "2.5rem" }}>1975</p>
-                  <p className="text-black/65 text-[9px] tracking-[0.45em] uppercase mt-1" style={{ fontFamily: "var(--sans)" }}>Established</p>
-                </div>
-                <div className="absolute -top-5 -right-5 p-6 hidden lg:block" style={{ border: "1.5px solid var(--border)", background: "var(--bg-card)" }}>
-                  <p className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "2rem", color: "var(--gold-mid)" }}>50+</p>
-                  <p className="text-[9px] tracking-[0.4em] uppercase mt-1" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>Years</p>
+                <div>
+                  <p style={{ fontFamily: "var(--sans)", fontSize: "14px", fontWeight: 600, color: "white", marginBottom: "8px", letterSpacing: "0.04em" }}>{item.title}</p>
+                  <p style={{ fontFamily: "var(--sans)", fontSize: "14px", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{item.desc}</p>
                 </div>
               </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Statement */}
-      <section
-        className="section-pad-md relative overflow-hidden"
-        style={{ background: "var(--bg-2)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
-      >
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, rgba(201,168,76,0.06) 0%, transparent 70%)" }} />
-        <div className="max-w-4xl mx-auto text-center relative z-10" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <AnimatedSection>
-            <p className="section-label block mb-7">Our Mission</p>
-            <blockquote
-              className="font-light leading-relaxed italic"
-              style={{ fontFamily: "var(--serif)", fontSize: "clamp(1.3rem, 3vw, 1.8rem)", color: "var(--text)" }}
-            >
-              &ldquo;To deliver the highest quality nuts and snack products to businesses across the UAE, building partnerships rooted in trust, consistency and a genuine passion for premium food.&rdquo;
-            </blockquote>
-            <div className="w-12 h-px mx-auto mt-10" style={{ background: "var(--gold-mid)" }} />
-            <p className="text-[10px] tracking-[0.4em] uppercase mt-5" style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}>
-              Al Mahmasani Roasteries · Est. 1975
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="section-pad">
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <AnimatedSection className="mb-20">
-            <span className="section-label block mb-4">Our Journey</span>
-            <h2 className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "var(--text)" }}>
-              50 Years in the Making
-            </h2>
-          </AnimatedSection>
-
-          <div className="space-y-0">
-            {timeline.map((item, i) => (
-              <AnimatedSection key={item.year} delay={i * 80}>
-                <div
-                  className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-0 border-b group transition-colors duration-300 ${i === 0 ? "border-t" : ""}`}
-                  style={{ borderColor: "var(--border)", paddingTop: "48px", paddingBottom: "48px" }}
-                >
-                  <div className="md:col-span-2">
-                    <p className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "2.25rem", color: "var(--gold-mid)" }}>{item.year}</p>
-                  </div>
-                  <div className="md:col-span-3" style={{ paddingTop: "8px" }}>
-                    <p className="text-sm tracking-[0.1em] uppercase font-medium" style={{ fontFamily: "var(--sans)", color: "var(--text)" }}>{item.title}</p>
-                  </div>
-                  <div className="md:col-span-7" style={{ paddingTop: "8px" }}>
-                    <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{item.event}</p>
-                  </div>
-                </div>
-              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Image Strip */}
-      <div className="grid grid-cols-2 md:grid-cols-4 h-52 md:h-72">
-        {[
-          "/images/products/cashew-3.jpg",
-          "/images/products/almond-2.jpg",
-          "/images/products/hazelnut-4.jpg",
-          "/images/products/pecan-1.jpg",
-        ].map((src, i) => (
-          <div key={i} className="relative img-zoom overflow-hidden">
-            <Image src={src} alt="" fill sizes="25vw" style={{ objectFit: "cover" }} />
-            <div className="absolute inset-0 bg-black/35 hover:bg-black/15 transition-colors duration-500" />
-          </div>
-        ))}
-      </div>
 
       {/* Values */}
-      <section className="section-pad" style={{ background: "var(--bg-2)" }}>
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <AnimatedSection className="mb-16">
-            <span className="section-label block mb-4">What We Stand For</span>
-            <h2 className="font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "var(--text)" }}>
-              Our<br />
-              <span className="gold-text">Core Values</span>
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {values.map((v, i) => (
-              <AnimatedSection key={v.title} delay={i * 100}>
-                <div
-                  className="value-card h-full p-10"
-                >
-                  <p
-                    className="text-xs tracking-[0.4em] uppercase mb-5 font-medium"
-                    style={{ fontFamily: "var(--sans)", color: "var(--gold-mid)" }}
-                  >
-                    {v.num}
-                  </p>
-                  <h3 className="font-light mb-4" style={{ fontFamily: "var(--serif)", fontSize: "1.4rem", color: "var(--text)" }}>{v.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>{v.desc}</p>
-                </div>
-              </AnimatedSection>
+      <section id="quality" className="section-pad" style={{ background: "var(--card-bg)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "56px" }}>
+            <p className="eyebrow" style={{ marginBottom: "16px" }}>What We Stand For</p>
+            <h2 className="display-lg" style={{ color: "var(--dark)" }}>Our Core Values</h2>
+          </div>
+          <div className="grid-4">
+            {values.map((v) => (
+              <div key={v.title} style={{ background: "white", borderRadius: "var(--radius-card)", padding: "36px 28px", border: "1px solid var(--border)" }}>
+                <p style={{ fontSize: "24px", marginBottom: "16px", color: "var(--gold)" }}>{v.icon}</p>
+                <p style={{ fontFamily: "var(--serif)", fontSize: "1.25rem", color: "var(--dark)", marginBottom: "12px" }}>{v.title}</p>
+                <p style={{ fontFamily: "var(--sans)", fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.7 }}>{v.desc}</p>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sourcing section */}
+      <section id="sourcing" className="section-pad" style={{ background: "var(--cream)" }}>
+        <div className="container grid-2">
+          <div style={{ position: "relative", height: "420px", borderRadius: "var(--radius-card)", overflow: "hidden" }}>
+            <Image src="/Images/Peanut Roasted.jpg.jpeg" alt="Global sourcing" fill sizes="600px" style={{ objectFit: "cover" }} />
+          </div>
+          <div>
+            <p className="eyebrow" style={{ marginBottom: "20px" }}>Global Sourcing</p>
+            <h2 className="display-lg" style={{ color: "var(--dark)", marginBottom: "24px" }}>
+              From Farm to<br />Roastery to Shelf
+            </h2>
+            <p className="body-lg" style={{ marginBottom: "20px" }}>
+              We source directly from premium growing regions — cashews from Vietnam and India, hazelnuts from Turkey, almonds from California. Direct relationships mean better quality, full traceability and no middlemen.
+            </p>
+            <p className="body-lg" style={{ marginBottom: "32px" }}>
+              Every shipment is tested in our in-house quality lab before entering production. Only lots that meet our grade specifications are roasted and distributed.
+            </p>
+            <Link href="/contact" className="btn btn-dark">Partner With Us</Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-pad-md" style={{ borderTop: "1px solid var(--border)" }}>
-        <div className="max-w-3xl mx-auto text-center" style={{ paddingLeft: "clamp(20px,5vw,80px)", paddingRight: "clamp(20px,5vw,80px)" }}>
-          <AnimatedSection>
-            <span className="section-label block mb-6">Partner With Us</span>
-            <h2 className="font-light mb-6" style={{ fontFamily: "var(--serif)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--text)" }}>
-              Become Part of<br />
-              <span className="gold-text">Our Story</span>
-            </h2>
-            <p className="text-sm leading-relaxed mb-10 max-w-lg mx-auto" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-              Join the hundreds of UAE businesses who trust Al Mahmasani Roasteries to supply premium nuts and snacks with consistency and reliability.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://wa.me/971504622865"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-gold inline-flex items-center justify-center gap-3 text-[11px] tracking-[0.18em]"
-              >
-                <MessageCircle size={15} />
-                WhatsApp Us
-              </a>
-              <Link href="/contact" className="btn btn-outline-gold text-[11px] tracking-[0.18em] text-center">
-                Contact Us
-              </Link>
-            </div>
-          </AnimatedSection>
+      <section className="section-pad" style={{ background: "var(--dark-2)" }}>
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="eyebrow" style={{ marginBottom: "16px" }}>Join Our Network</p>
+          <h2 className="display-lg" style={{ color: "white", maxWidth: "560px", margin: "0 auto 20px" }}>
+            Ready to Partner with the UAE&#39;s Finest Roastery?
+          </h2>
+          <p className="body-lg" style={{ color: "rgba(255,255,255,0.6)", maxWidth: "400px", margin: "0 auto 36px" }}>
+            Talk to our wholesale team today. Flexible terms, reliable supply, premium quality guaranteed.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+              Chat on WhatsApp →
+            </a>
+            <Link href="/contact" className="btn btn-outline-white">Send an Enquiry</Link>
+          </div>
         </div>
       </section>
     </>

@@ -1,248 +1,122 @@
 "use client";
 import { useState } from "react";
-import AnimatedSection from "@/components/AnimatedSection";
-import { Phone, MessageCircle, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", category: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const msg = encodeURIComponent(
-      `Hello Al Mahmasani Roasteries,\n\nName: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nEmail: ${form.email}\nInterested In: ${form.category}\n\n${form.message}`
-    );
-    window.open(`https://wa.me/971504622865?text=${msg}`, "_blank");
-    setSent(true);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const fieldStyle: React.CSSProperties = {
-    fontFamily: "var(--sans)",
+  const waLink = () => {
+    const text = encodeURIComponent(
+      `Hi Al Mahmasani,\n\nName: ${form.name}\nCompany: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\n\nMessage: ${form.message}`
+    );
+    return `https://wa.me/971504622865?text=${text}`;
+  };
+
+  const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "var(--bg)",
-    color: "var(--text)",
+    fontFamily: "var(--sans)",
+    fontSize: "14px",
+    color: "var(--dark)",
+    background: "var(--white)",
     border: "1.5px solid var(--border)",
-    borderRadius: "var(--radius-btn)",
-    fontSize: "0.875rem",
-    padding: "0.875rem 1rem",
+    borderRadius: "12px",
+    padding: "14px 18px",
     outline: "none",
     transition: "border-color 0.2s",
   };
 
-  const focusGold = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-    (e.target.style.borderColor = "var(--gold-mid)");
-  const blurBorder = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-    (e.target.style.borderColor = "var(--border)");
-
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[65vh] min-h-[480px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/Al-Mahmasani-Roastery/images/products/cashew-3.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-black/45" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, var(--bg) 0%, transparent 30%)" }} />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 pb-24 pt-36 page-enter">
-          <p className="section-label block mb-5" style={{ color: "rgba(255,255,255,0.65)" }}>Get In Touch</p>
-          <h1 className="text-white font-light" style={{ fontFamily: "var(--serif)", fontSize: "clamp(3.5rem, 8vw, 7rem)", lineHeight: 1 }}>
-            Let&apos;s Work Together
+      <section style={{ minHeight: "40vh", background: "var(--dark)", display: "flex", alignItems: "flex-end", paddingBottom: "64px" }}>
+        <div className="container" style={{ paddingTop: "140px" }}>
+          <p className="eyebrow hero-in-1" style={{ marginBottom: "16px" }}>Get in Touch</p>
+          <h1 className="display-xl hero-in-2" style={{ color: "white", maxWidth: "560px" }}>
+            Let&#39;s Build Something<br />
+            <em style={{ color: "var(--gold)", fontStyle: "italic" }}>Together.</em>
           </h1>
-          <p className="text-white/60 text-sm mt-6 max-w-lg" style={{ fontFamily: "var(--sans)", lineHeight: 1.8 }}>
-            We work with supermarkets, distributors, restaurants, hotels and retailers across the UAE. Get in touch for wholesale pricing and product information.
-          </p>
         </div>
       </section>
 
-      {/* Contact Content */}
-      <section className="section-pad">
-        <div className="max-w-7xl mx-auto" style={{ paddingLeft: "clamp(32px,6vw,96px)", paddingRight: "clamp(32px,6vw,96px)" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-20 lg:gap-24">
+      {/* Contact body */}
+      <section className="section-pad" style={{ background: "var(--cream)" }}>
+        <div className="container">
+          <div className="grid-2" style={{ alignItems: "flex-start" }}>
 
-            {/* Left — details */}
-            <div className="lg:col-span-2 space-y-12">
-              <AnimatedSection>
-                <span className="section-label block mb-7">Contact Details</span>
-                <div className="space-y-7">
-                  {[
-                    { href: "https://wa.me/971504622865", icon: <MessageCircle size={18} />, label: "WhatsApp", value: "+971 50 462 2865", external: true },
-                    { href: "tel:+971504622865",           icon: <Phone size={18} />,         label: "Phone",     value: "+971 50 462 2865", external: false },
-                  ].map((item) => (
-                    <a key={item.label} href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}
-                      className="flex items-start gap-5 group">
-                      <div
-                        className="w-11 h-11 flex items-center justify-center flex-shrink-0 transition-all duration-300"
-                        style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--gold-mid)" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--gold-mid)")}
-                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
-                      >
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="text-[9px] tracking-[0.4em] uppercase mb-1" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>{item.label}</p>
-                        <p className="text-sm" style={{ fontFamily: "var(--sans)", color: "var(--text)" }}>{item.value}</p>
-                      </div>
-                    </a>
-                  ))}
+            {/* Info column */}
+            <div>
+              <p className="eyebrow" style={{ marginBottom: "20px" }}>Our Details</p>
+              <h2 className="display-md" style={{ color: "var(--dark)", marginBottom: "32px" }}>Wholesale &amp; Partnerships</h2>
 
-                  {[
-                    { icon: <MapPin size={18} />, label: "Location", value: "United Arab Emirates" },
-                  ].map((item) => (
-                    <div key={item.label} className="flex items-start gap-5">
-                      <div className="w-11 h-11 flex items-center justify-center flex-shrink-0" style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--gold-mid)" }}>
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p className="text-[9px] tracking-[0.4em] uppercase mb-1" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>{item.label}</p>
-                        <p className="text-sm" style={{ fontFamily: "var(--sans)", color: "var(--text)" }}>{item.value}</p>
-                      </div>
-                    </div>
-                  ))}
-
-                  <div className="flex items-start gap-5">
-                    <div className="w-11 h-11 flex items-center justify-center flex-shrink-0" style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--gold-mid)" }}>
-                      <Clock size={18} />
-                    </div>
-                    <div>
-                      <p className="text-[9px] tracking-[0.4em] uppercase mb-1" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Business Hours</p>
-                      <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--sans)", color: "var(--text)" }}>
-                        Mon – Fri: 9:00 AM – 6:00 PM<br />
-                        Saturday: 9:00 AM – 1:00 PM<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
-                  </div>
+              {[
+                { label: "Location", value: "Sharjah Industrial Area 4, United Arab Emirates" },
+                { label: "Phone / WhatsApp", value: "+971 50 462 2865", href: "tel:+971504622865" },
+                { label: "Email", value: "info@almahmasani.ae", href: "mailto:info@almahmasani.ae" },
+                { label: "Hours", value: "Mon–Fri 8:00 am – 6:00 pm GST" },
+              ].map((item) => (
+                <div key={item.label} style={{ marginBottom: "28px", paddingBottom: "28px", borderBottom: "1px solid var(--border)" }}>
+                  <p style={{ fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "6px" }}>{item.label}</p>
+                  {item.href ? (
+                    <a href={item.href} style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", color: "var(--dark)" }}>{item.value}</a>
+                  ) : (
+                    <p style={{ fontFamily: "var(--serif)", fontSize: "1.15rem", color: "var(--dark)" }}>{item.value}</p>
+                  )}
                 </div>
-              </AnimatedSection>
+              ))}
 
-              {/* Social */}
-              <AnimatedSection delay={200}>
-                <span className="section-label block mb-5">Follow Us</span>
-                <div className="flex gap-3">
-                  {[
-                    { href: "https://www.linkedin.com/company/al-mahmasani-roastery-llc/", label: "LinkedIn",
-                      icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> },
-                    { href: "#", label: "Instagram",
-                      icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg> },
-                  ].map((s) => (
-                    <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}
-                      className="w-10 h-10 flex items-center justify-center transition-all duration-300"
-                      style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-btn)", color: "var(--text-muted)" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--gold-mid)"; (e.currentTarget as HTMLElement).style.color = "var(--gold-mid)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border)"; (e.currentTarget as HTMLElement).style.color = "var(--text-muted)"; }}>
-                      {s.icon}
-                    </a>
-                  ))}
-                </div>
-              </AnimatedSection>
-
-              {/* WhatsApp CTA card */}
-              <AnimatedSection delay={280}>
-                <div className="p-6" style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-card)", background: "var(--bg-2)" }}>
-                  <p className="text-sm font-light mb-2" style={{ fontFamily: "var(--serif)", color: "var(--text)" }}>Prefer instant contact?</p>
-                  <p className="text-xs leading-relaxed mb-5" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                    WhatsApp us directly for faster responses and wholesale pricing.
-                  </p>
-                  <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#25D366] text-white text-[10px] tracking-[0.2em] uppercase px-6 py-3 hover:bg-[#20ba59] transition-all duration-300 font-medium"
-                    style={{ fontFamily: "var(--sans)", borderRadius: "var(--radius-btn)" }}>
-                    <MessageCircle size={13} />
-                    Chat on WhatsApp
-                  </a>
-                </div>
-              </AnimatedSection>
+              <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ marginTop: "8px" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: "8px" }}>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.532 5.855L.057 23.882a.75.75 0 0 0 .924.924l6.063-1.476A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.734-.516-5.285-1.415l-.378-.218-3.928.956.977-3.878-.234-.389A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+                Chat on WhatsApp
+              </a>
             </div>
 
-            {/* Right — form */}
-            <div className="lg:col-span-3">
-              <AnimatedSection delay={150}>
-                <span className="section-label block mb-7">Send An Enquiry</span>
-
-                {sent ? (
-                  <div className="p-14 text-center" style={{ border: "1.5px solid var(--border)", borderRadius: "var(--radius-card)", background: "var(--bg-2)" }}>
-                    <div className="w-14 h-14 flex items-center justify-center mx-auto mb-6"
-                      style={{ border: "1.5px solid var(--gold-mid)", borderRadius: "var(--radius-btn)", background: "rgba(201,168,76,0.08)" }}>
-                      <span className="text-2xl" style={{ color: "var(--gold-mid)" }}>✓</span>
-                    </div>
-                    <h3 className="font-light mb-3" style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--text)" }}>Enquiry Sent</h3>
-                    <p className="text-sm leading-relaxed mb-8" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-                      Your message has been forwarded via WhatsApp. Our team will respond within one business day.
-                    </p>
-                    <button onClick={() => setSent(false)}
-                      className="inline-flex items-center gap-2 text-xs tracking-[0.3em] uppercase hover:gap-3 transition-all"
-                      style={{ color: "var(--gold-mid)", fontFamily: "var(--sans)" }}>
-                      Send Another <ArrowRight size={12} />
-                    </button>
+            {/* Form column */}
+            <div style={{ background: "white", borderRadius: "var(--radius-card)", padding: "clamp(28px,4vw,48px)", boxShadow: "var(--shadow-md)" }}>
+              <p style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--dark)", marginBottom: "28px" }}>Send an Enquiry</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                  <div>
+                    <label style={{ fontFamily: "var(--sans)", fontSize: "12px", fontWeight: 500, color: "var(--text-muted)", display: "block", marginBottom: "6px" }}>Name *</label>
+                    <input name="name" value={form.name} onChange={handleChange} placeholder="Your name" style={inputStyle} />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Full Name *</label>
-                        <input type="text" name="name" required value={form.name} onChange={handleChange} placeholder="Ahmad Al Rashid" style={fieldStyle} onFocus={focusGold} onBlur={blurBorder} />
-                      </div>
-                      <div>
-                        <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Company Name</label>
-                        <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="Your Company LLC" style={fieldStyle} onFocus={focusGold} onBlur={blurBorder} />
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Phone Number *</label>
-                        <input type="tel" name="phone" required value={form.phone} onChange={handleChange} placeholder="+971 50 000 0000" style={fieldStyle} onFocus={focusGold} onBlur={blurBorder} />
-                      </div>
-                      <div>
-                        <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Email Address</label>
-                        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="email@company.ae" style={fieldStyle} onFocus={focusGold} onBlur={blurBorder} />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Product Category of Interest</label>
-                      <select name="category" value={form.category} onChange={handleChange}
-                        style={{ ...fieldStyle, appearance: "none" as const, cursor: "pointer" }}
-                        onFocus={focusGold} onBlur={blurBorder}>
-                        <option value="">Select a category...</option>
-                        {["Cashews", "Almonds", "Hazelnuts", "Pecans", "Coffee Nuts", "Mixed Nuts", "Multiple Categories"].map((c) => (
-                          <option key={c} value={c}>{c}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="text-[9px] tracking-[0.4em] uppercase block mb-2" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>Your Message *</label>
-                      <textarea name="message" required rows={6} value={form.message} onChange={handleChange}
-                        placeholder="Tell us about your business, the products you're interested in, and your approximate order volumes..."
-                        style={{ ...fieldStyle, resize: "none" }} onFocus={focusGold} onBlur={blurBorder} />
-                    </div>
-                    <button type="submit" className="btn btn-gold w-full flex items-center justify-center gap-3 text-[11px] tracking-[0.2em]">
-                      <Send size={15} />
-                      Send Enquiry via WhatsApp
-                    </button>
-                    <p className="text-[10px] text-center" style={{ fontFamily: "var(--sans)", color: "var(--text-faint)" }}>
-                      Your message will be sent directly to our team via WhatsApp.
-                    </p>
-                  </form>
-                )}
-              </AnimatedSection>
+                  <div>
+                    <label style={{ fontFamily: "var(--sans)", fontSize: "12px", fontWeight: 500, color: "var(--text-muted)", display: "block", marginBottom: "6px" }}>Company</label>
+                    <input name="company" value={form.company} onChange={handleChange} placeholder="Company name" style={inputStyle} />
+                  </div>
+                </div>
+                <div>
+                  <label style={{ fontFamily: "var(--sans)", fontSize: "12px", fontWeight: 500, color: "var(--text-muted)", display: "block", marginBottom: "6px" }}>Email *</label>
+                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" style={inputStyle} />
+                </div>
+                <div>
+                  <label style={{ fontFamily: "var(--sans)", fontSize: "12px", fontWeight: 500, color: "var(--text-muted)", display: "block", marginBottom: "6px" }}>Phone / WhatsApp</label>
+                  <input name="phone" value={form.phone} onChange={handleChange} placeholder="+971 50 000 0000" style={inputStyle} />
+                </div>
+                <div>
+                  <label style={{ fontFamily: "var(--sans)", fontSize: "12px", fontWeight: 500, color: "var(--text-muted)", display: "block", marginBottom: "6px" }}>Message *</label>
+                  <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your requirements — products, quantities, delivery location..." rows={5} style={{ ...inputStyle, resize: "vertical" }} />
+                </div>
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-gold"
+                  style={{ width: "100%", justifyContent: "center", marginTop: "4px" }}
+                >
+                  Send via WhatsApp →
+                </a>
+                <p style={{ fontFamily: "var(--sans)", fontSize: "11px", color: "var(--text-muted)", textAlign: "center" }}>
+                  Your enquiry will open in WhatsApp with your details pre-filled.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Bottom strip */}
-      <section className="py-14" style={{ borderTop: "1px solid var(--border)", background: "var(--bg-2)" }}>
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm" style={{ fontFamily: "var(--sans)", color: "var(--text-muted)" }}>
-            Al Mahmasani Roasteries · United Arab Emirates · Est. 1975
-          </p>
-          <a href="https://wa.me/971504622865" target="_blank" rel="noopener noreferrer"
-            className="btn btn-outline-gold inline-flex items-center gap-2 text-[10px] tracking-[0.25em]">
-            <MessageCircle size={13} />
-            +971 50 462 2865
-          </a>
         </div>
       </section>
     </>
