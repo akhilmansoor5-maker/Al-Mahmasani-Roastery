@@ -1,3 +1,4 @@
 export default function imageLoader({ src }: { src: string }) {
-  return `/Al-Mahmasani-Roastery${src}`;
+  const encoded = src.split("/").map((seg) => encodeURIComponent(seg)).join("/");
+  return `/Al-Mahmasani-Roastery${encoded}`;
 }
