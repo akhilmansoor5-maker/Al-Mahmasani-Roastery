@@ -23,7 +23,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section style={{ minHeight: "70vh", position: "relative", display: "flex", alignItems: "flex-end", paddingBottom: "80px" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/Images/cashew roasted.jpg.jpeg" alt="About Al Mahmasani" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.2 }} />
+          <Image src="/images/cashew roasted.jpg.jpeg" alt="About Al Mahmasani" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.2 }} />
           <div style={{ position: "absolute", inset: 0, background: "var(--dark)" }} />
         </div>
         <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "140px" }}>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <Link href="/products" className="btn btn-dark">Explore Our Products</Link>
           </div>
           <div style={{ position: "relative", height: "500px", borderRadius: "var(--radius-card)", overflow: "hidden" }}>
-            <Image src="/Images/Almond Unsalted.jpg.jpeg" alt="Our roastery" fill sizes="600px" style={{ objectFit: "cover" }} />
+            <Image src="/images/Almond Unsalted.jpg.jpeg" alt="Our roastery" fill sizes="600px" style={{ objectFit: "cover" }} />
           </div>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function AboutPage() {
       <section id="sourcing" className="section-pad" style={{ background: "var(--cream)" }}>
         <div className="container grid-2">
           <div style={{ position: "relative", height: "420px", borderRadius: "var(--radius-card)", overflow: "hidden" }}>
-            <Image src="/Images/Peanut Roasted.jpg.jpeg" alt="Global sourcing" fill sizes="600px" style={{ objectFit: "cover" }} />
+            <Image src="/images/Peanut Roasted.jpg.jpeg" alt="Global sourcing" fill sizes="600px" style={{ objectFit: "cover" }} />
           </div>
           <div>
             <p className="eyebrow" style={{ marginBottom: "20px" }}>Global Sourcing</p>

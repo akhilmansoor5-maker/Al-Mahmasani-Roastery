@@ -43,7 +43,7 @@ export default function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
               <div style={{ position: "relative", width: "40px", height: "40px", borderRadius: "10px", overflow: "hidden", flexShrink: 0 }}>
-                <Image src="/Images/AMR Logo-01.jpg.jpeg" alt="Al Mahmasani" fill sizes="40px" style={{ objectFit: "contain" }} />
+                <Image src="/images/AMR Logo-01.jpg.jpeg" alt="Al Mahmasani" fill sizes="40px" style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <p style={{ fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--dark)", lineHeight: 1.2 }}>Al Mahmasani</p>

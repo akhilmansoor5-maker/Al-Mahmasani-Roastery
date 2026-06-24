@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const slides = [
-  "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png",
-  "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png",
-  "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png",
-  "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png",
-  "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png",
+  "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png",
+  "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png",
+  "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png",
+  "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png",
+  "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png",
 ];
 
 export default function HeroSlideshow() {

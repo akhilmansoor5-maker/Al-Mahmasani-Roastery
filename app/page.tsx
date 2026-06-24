@@ -5,12 +5,12 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 
 /* ── Category grid data ── */
 const categories = [
-  { label: "Chocolate-Coated Nuts", href: "/products#chocolate", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
-  { label: "Hazelnut Collection",   href: "/products#hazelnut",  img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
-  { label: "Cashew Collection",     href: "/products#cashew",    img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
-  { label: "Coffee Collection",     href: "/products#coffee",    img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
-  { label: "Fruit Collection",      href: "/products#fruit",     img: "/Images/Pistachio Roasted.jpg.jpeg" },
-  { label: "Savoury Collection",    href: "/products#savoury",   img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
+  { label: "Chocolate-Coated Nuts", href: "/products#chocolate", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
+  { label: "Hazelnut Collection",   href: "/products#hazelnut",  img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
+  { label: "Cashew Collection",     href: "/products#cashew",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
+  { label: "Coffee Collection",     href: "/products#coffee",    img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
+  { label: "Fruit Collection",      href: "/products#fruit",     img: "/images/Pistachio Roasted.jpg.jpeg" },
+  { label: "Savoury Collection",    href: "/products#savoury",   img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
 ];
 
 const stats = [
@@ -49,10 +49,10 @@ export default function HomePage() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {[
-              "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png",
-              "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png",
-              "/Images/Almond Unsalted.jpg.jpeg",
-              "/Images/cashew roasted.jpg.jpeg",
+              "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png",
+              "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png",
+              "/images/Almond Unsalted.jpg.jpeg",
+              "/images/cashew roasted.jpg.jpeg",
             ].map((img, i) => (
               <div key={i} style={{ position: "relative", height: i % 2 === 0 ? "200px" : "160px", borderRadius: "var(--radius-card)", overflow: "hidden", alignSelf: i % 2 === 0 ? "flex-start" : "flex-end" }}>
                 <Image src={img} alt="Product" fill sizes="260px" style={{ objectFit: "cover" }} />

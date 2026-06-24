@@ -7,63 +7,63 @@ import Link from "next/link";
 
 /* Chocolate-Coated Nuts — Pecan (11) + Almond (8) */
 const chocolateProducts = [
-  { name: "Pecan Chocolate 1", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
-  { name: "Pecan Chocolate 2", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_mstiu0mstiu0msti.png" },
-  { name: "Pecan Chocolate 3", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_q5f1awq5f1awq5f1.png" },
-  { name: "Pecan Chocolate 4", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_vxzyb0vxzyb0vxzy.png" },
-  { name: "Pecan Chocolate 5", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_6see796see796see (1).png" },
-  { name: "Pecan Chocolate 6", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_64gus764gus764gu (1) (1).png" },
-  { name: "Pecan Chocolate 7", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_wewh3qwewh3qwewh (1).png" },
-  { name: "Pecan Chocolate 8", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_ydaskwydaskwydas.png" },
-  { name: "Pecan Chocolate 9", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_yubfqlyubfqlyubf (1).png" },
-  { name: "Pecan Chocolate 10", img: "/Images/Catalogue Photos/Pecan 2/55bf0020-d115-4536-b96a-be01d6a1f82f.png" },
-  { name: "Pecan Chocolate 11", img: "/Images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
-  { name: "Almond Chocolate 1", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png" },
-  { name: "Almond Chocolate 2", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_7rsipk7rsipk7rsi.png" },
-  { name: "Almond Chocolate 3", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp41iayp41iayp4.png" },
-  { name: "Almond Chocolate 4", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp688ayp688ayp6.png" },
-  { name: "Almond Chocolate 5", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_cfk48xcfk48xcfk4.png" },
-  { name: "Almond Chocolate 6", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_qshizzqshizzqshi.png" },
-  { name: "Almond Chocolate 7", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_vb7ezovb7ezovb7e.png" },
-  { name: "Almond Chocolate 8", img: "/Images/Catalogue Photos/Almond 1/Gemini_Generated_Image_xnbly1xnbly1xnbl.png" },
+  { name: "Pecan Chocolate 1", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
+  { name: "Pecan Chocolate 2", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_mstiu0mstiu0msti.png" },
+  { name: "Pecan Chocolate 3", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_q5f1awq5f1awq5f1.png" },
+  { name: "Pecan Chocolate 4", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_vxzyb0vxzyb0vxzy.png" },
+  { name: "Pecan Chocolate 5", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_6see796see796see (1).png" },
+  { name: "Pecan Chocolate 6", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_64gus764gus764gu (1) (1).png" },
+  { name: "Pecan Chocolate 7", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_wewh3qwewh3qwewh (1).png" },
+  { name: "Pecan Chocolate 8", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_ydaskwydaskwydas.png" },
+  { name: "Pecan Chocolate 9", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_yubfqlyubfqlyubf (1).png" },
+  { name: "Pecan Chocolate 10", img: "/images/Catalogue Photos/Pecan 2/55bf0020-d115-4536-b96a-be01d6a1f82f.png" },
+  { name: "Pecan Chocolate 11", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
+  { name: "Almond Chocolate 1", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png" },
+  { name: "Almond Chocolate 2", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_7rsipk7rsipk7rsi.png" },
+  { name: "Almond Chocolate 3", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp41iayp41iayp4.png" },
+  { name: "Almond Chocolate 4", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp688ayp688ayp6.png" },
+  { name: "Almond Chocolate 5", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_cfk48xcfk48xcfk4.png" },
+  { name: "Almond Chocolate 6", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_qshizzqshizzqshi.png" },
+  { name: "Almond Chocolate 7", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_vb7ezovb7ezovb7e.png" },
+  { name: "Almond Chocolate 8", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_xnbly1xnbly1xnbl.png" },
 ];
 
 /* Hazelnut Collection (7) */
 const hazelnutProducts = [
-  { name: "Hazelnut Premium 1", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
-  { name: "Hazelnut Premium 2", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
-  { name: "Hazelnut Premium 3", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
-  { name: "Hazelnut Premium 4", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_u86dsdu86dsdu86d.png" },
-  { name: "Hazelnut Premium 5", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
-  { name: "Hazelnut Premium 6", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
-  { name: "Hazelnut Premium 7", img: "/Images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
+  { name: "Hazelnut Premium 1", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
+  { name: "Hazelnut Premium 2", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
+  { name: "Hazelnut Premium 3", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
+  { name: "Hazelnut Premium 4", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_u86dsdu86dsdu86d.png" },
+  { name: "Hazelnut Premium 5", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
+  { name: "Hazelnut Premium 6", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
+  { name: "Hazelnut Premium 7", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
 ];
 
 /* Cashew Collection (5) */
 const cashewProducts = [
-  { name: "Cashew Roasted Salted",   img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
-  { name: "Cashew Roasted Unsalted", img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png" },
-  { name: "Cashew Jumbo",            img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_jmh8w5jmh8w5jmh8.png" },
-  { name: "Cashew Butter Toffee",    img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_krelcykrelcykrel.png" },
-  { name: "Cashew Spiced",           img: "/Images/Catalogue Photos/Cashew/Gemini_Generated_Image_w35cxiw35cxiw35c.png" },
+  { name: "Cashew Roasted Salted",   img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
+  { name: "Cashew Roasted Unsalted", img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png" },
+  { name: "Cashew Jumbo",            img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_jmh8w5jmh8w5jmh8.png" },
+  { name: "Cashew Butter Toffee",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_krelcykrelcykrel.png" },
+  { name: "Cashew Spiced",           img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_w35cxiw35cxiw35c.png" },
 ];
 
 /* Coffee Collection (7) */
 const coffeeProducts = [
-  { name: "Coffee Almond Roast 1",   img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2cfk252cfk252cfk.png" },
-  { name: "Coffee Almond Roast 2",   img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
-  { name: "Coffee Cashew Blend",     img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_35xuo835xuo835xu.png" },
-  { name: "Coffee Pecan Glaze",      img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_3d9w513d9w513d9w.png" },
-  { name: "Espresso Hazelnut",       img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_49w10g49w10g49w1.png" },
-  { name: "Coffee Nut Mix",          img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_kjmce9kjmce9kjmc.png" },
-  { name: "Arabica Glazed Nuts",     img: "/Images/Catalogue Photos/Cofee/Gemini_Generated_Image_rf8iyerf8iyerf8i.png" },
+  { name: "Coffee Almond Roast 1",   img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2cfk252cfk252cfk.png" },
+  { name: "Coffee Almond Roast 2",   img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
+  { name: "Coffee Cashew Blend",     img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_35xuo835xuo835xu.png" },
+  { name: "Coffee Pecan Glaze",      img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_3d9w513d9w513d9w.png" },
+  { name: "Espresso Hazelnut",       img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_49w10g49w10g49w1.png" },
+  { name: "Coffee Nut Mix",          img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_kjmce9kjmce9kjmc.png" },
+  { name: "Arabica Glazed Nuts",     img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_rf8iyerf8iyerf8i.png" },
 ];
 
 /* Fruit Collection (6) — placeholder cards */
 const fruitProducts = [
-  { name: "Roasted Pistachio",    img: "/Images/Pistachio Roasted.jpg.jpeg" },
-  { name: "Premium Almonds",      img: "/Images/Almond Unsalted.jpg.jpeg" },
-  { name: "Roasted Peanuts",      img: "/Images/Peanut Roasted.jpg.jpeg" },
+  { name: "Roasted Pistachio",    img: "/images/Pistachio Roasted.jpg.jpeg" },
+  { name: "Premium Almonds",      img: "/images/Almond Unsalted.jpg.jpeg" },
+  { name: "Roasted Peanuts",      img: "/images/Peanut Roasted.jpg.jpeg" },
   { name: "Dried Mango",          img: null },
   { name: "Dried Cranberry",      img: null },
   { name: "Mixed Dried Fruit",    img: null },
@@ -74,59 +74,59 @@ const savouryGroups = [
   {
     label: "Cashew Kri Kri",
     items: [
-      { name: "Cashew Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
-      { name: "Cashew Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 2.png" },
-      { name: "Cashew Kri Kri 3",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 3.png" },
-      { name: "Cashew Kri Kri 4",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 4.png" },
-      { name: "Cashew Kri Kri 5",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 5.png" },
-      { name: "Cashew Kri Kri 6",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 6.png" },
-      { name: "Cashew Kri Kri 7",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 7.png" },
-      { name: "Cashew Kri Kri 8",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 8.png" },
-      { name: "Cashew Kri Kri 9",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 9.png" },
+      { name: "Cashew Kri Kri 1",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
+      { name: "Cashew Kri Kri 2",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 2.png" },
+      { name: "Cashew Kri Kri 3",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 3.png" },
+      { name: "Cashew Kri Kri 4",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 4.png" },
+      { name: "Cashew Kri Kri 5",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 5.png" },
+      { name: "Cashew Kri Kri 6",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 6.png" },
+      { name: "Cashew Kri Kri 7",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 7.png" },
+      { name: "Cashew Kri Kri 8",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 8.png" },
+      { name: "Cashew Kri Kri 9",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 9.png" },
     ],
   },
   {
     label: "Cashew Cracker",
     items: [
-      { name: "Cashew Cracker 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 10.png" },
-      { name: "Cashew Cracker 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 11.png" },
-      { name: "Cashew Cracker 3",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 12.png" },
-      { name: "Cashew Cracker 4",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 13.png" },
-      { name: "Cashew Cracker 5",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 14.png" },
-      { name: "Cashew Cracker 6",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 15.png" },
+      { name: "Cashew Cracker 1",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 10.png" },
+      { name: "Cashew Cracker 2",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 11.png" },
+      { name: "Cashew Cracker 3",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 12.png" },
+      { name: "Cashew Cracker 4",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 13.png" },
+      { name: "Cashew Cracker 5",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 14.png" },
+      { name: "Cashew Cracker 6",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 15.png" },
     ],
   },
   {
     label: "Almond Kri Kri",
     items: [
-      { name: "Almond Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 1.png" },
-      { name: "Almond Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 2.png" },
+      { name: "Almond Kri Kri 1",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 1.png" },
+      { name: "Almond Kri Kri 2",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 2.png" },
     ],
   },
   {
     label: "Peanut Kri Kri",
     items: [
-      { name: "Peanut Kri Kri 1",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
-      { name: "Peanut Kri Kri 2",  img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 2.png" },
+      { name: "Peanut Kri Kri 1",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
+      { name: "Peanut Kri Kri 2",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 2.png" },
     ],
   },
   {
     label: "Peanut Ball",
     items: [
-      { name: "Peanut Ball 1",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 3.png" },
-      { name: "Peanut Ball 2",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 4.png" },
-      { name: "Peanut Ball 3",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 5.png" },
+      { name: "Peanut Ball 1",     img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 3.png" },
+      { name: "Peanut Ball 2",     img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 4.png" },
+      { name: "Peanut Ball 3",     img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 5.png" },
     ],
   },
   {
     label: "Sunflower Cracker",
     items: [
-      { name: "Sunflower Cracker 1", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 1.png" },
-      { name: "Sunflower Cracker 2", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 2.png" },
-      { name: "Sunflower Cracker 3", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 3.png" },
-      { name: "Sunflower Cracker 4", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 4.png" },
-      { name: "Sunflower Cracker 5", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 5.png" },
-      { name: "Sunflower Cracker 6", img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 6.png" },
+      { name: "Sunflower Cracker 1", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 1.png" },
+      { name: "Sunflower Cracker 2", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 2.png" },
+      { name: "Sunflower Cracker 3", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 3.png" },
+      { name: "Sunflower Cracker 4", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 4.png" },
+      { name: "Sunflower Cracker 5", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 5.png" },
+      { name: "Sunflower Cracker 6", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 6.png" },
     ],
   },
 ];
@@ -183,7 +183,7 @@ export default function ProductsPage() {
       {/* Hero */}
       <section style={{ minHeight: "50vh", position: "relative", display: "flex", alignItems: "flex-end", paddingBottom: "60px" }}>
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src="/Images/Almond Unsalted.jpg.jpeg" alt="Products" fill sizes="100vw" style={{ objectFit: "cover" }} />
+          <Image src="/images/Almond Unsalted.jpg.jpeg" alt="Products" fill sizes="100vw" style={{ objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "rgba(28,18,8,0.75)" }} />
         </div>
         <div className="container" style={{ position: "relative", zIndex: 1, paddingTop: "140px" }}>
@@ -272,10 +272,10 @@ export default function ProductsPage() {
         desc="Signature blends combining the best of our roastery. Custom blend ratios available for wholesale partners.">
         <div className="grid-4">
           {[
-            { name: "Classic Mixed Nuts",     img: "/Images/Peanut Roasted.jpg.jpeg" },
-            { name: "Premium Deluxe Mix",     img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 16.png" },
-            { name: "Roasted Mixed Selection",img: "/Images/cashew roasted.jpg.jpeg" },
-            { name: "Party Mix",              img: "/Images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
+            { name: "Classic Mixed Nuts",     img: "/images/Peanut Roasted.jpg.jpeg" },
+            { name: "Premium Deluxe Mix",     img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 16.png" },
+            { name: "Roasted Mixed Selection",img: "/images/cashew roasted.jpg.jpeg" },
+            { name: "Party Mix",              img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
           ].map((p) => <ProductCard key={p.name} {...p} />)}
         </div>
       </CategorySection>
