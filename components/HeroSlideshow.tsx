@@ -54,10 +54,9 @@ export default function HeroSlideshow() {
       </div>
 
       {/* Content */}
-      <div style={{
+      <div className="hero-content-grid" style={{
         position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 2,
         padding: "0 clamp(24px,5vw,80px) clamp(60px,8vh,100px)",
-        display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "flex-end",
       }}>
         <div>
           <p className="hero-in-1" style={{ fontFamily: "var(--sans)", fontSize: "13px", fontWeight: 500, color: "rgba(255,255,255,0.8)", letterSpacing: "0.06em", marginBottom: "16px" }}>

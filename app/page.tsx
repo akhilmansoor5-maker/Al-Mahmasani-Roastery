@@ -47,7 +47,7 @@ export default function HomePage() {
               <Link href="/contact" className="btn btn-outline-dark">Become a Partner</Link>
             </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className="about-mosaic" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {[
               "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png",
               "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png",
@@ -68,7 +68,7 @@ export default function HomePage() {
           <p className="eyebrow" style={{ textAlign: "center", marginBottom: "52px" }}>By the Numbers</p>
 
           {/* 4-stat row with dividers */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "0" }}>
+          <div className="stats-grid">
             {stats.map((s, i) => (
               <div key={s.label} style={{
                 textAlign: "center", padding: "0 32px 0",
@@ -110,10 +110,9 @@ export default function HomePage() {
       {/* ── 6. PARTNER CTA ── */}
       <section style={{ background: "var(--card-bg)", padding: "clamp(80px,10vw,120px) 0" }}>
         <div className="container">
-          <div style={{
+          <div className="cta-split" style={{
             background: "var(--dark)", borderRadius: "32px",
-            padding: "clamp(56px,7vw,88px) clamp(40px,6vw,80px)",
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center",
+            padding: "clamp(40px,5vw,88px) clamp(28px,5vw,80px)",
           }}>
             {/* Left */}
             <div>

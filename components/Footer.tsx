@@ -32,11 +32,9 @@ export default function Footer() {
       <div className="container">
 
         {/* Main white card */}
-        <div style={{
+        <div className="footer-card-grid" style={{
           background: "white", borderRadius: "28px",
-          padding: "clamp(40px,5vw,64px)",
-          display: "grid", gridTemplateColumns: "1fr 1.1fr 1fr",
-          gap: "clamp(32px,4vw,64px)",
+          padding: "clamp(32px,4vw,64px)",
         }}>
 
           {/* Col 1 — Logo + desc + social + newsletter */}
@@ -89,7 +87,7 @@ export default function Footer() {
           {/* Col 2 — Big navigation links */}
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <p style={{ fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--text-muted)", marginBottom: "28px" }}>Navigation</p>
-            <nav style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+            <nav className="footer-nav-big">
               {navLinks.map((l) => (
                 <Link key={l.href} href={l.href} style={{
                   fontFamily: "var(--serif)", fontSize: "clamp(2rem,3vw,2.8rem)", fontWeight: 700,

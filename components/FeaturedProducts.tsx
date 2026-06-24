@@ -63,10 +63,10 @@ export default function FeaturedProducts() {
         </div>
 
         {/* 3-col layout: title | card | description */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.05fr 1fr", gap: "clamp(32px,4vw,64px)", alignItems: "center" }}>
+        <div className="fp-grid">
 
           {/* Left — title, counter, arrows */}
-          <div>
+          <div className="fp-left">
             <span style={{
               display: "inline-block", fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600,
               letterSpacing: "0.14em", textTransform: "uppercase",
@@ -109,7 +109,7 @@ export default function FeaturedProducts() {
           </div>
 
           {/* Center — stacked card with image */}
-          <div style={{ position: "relative" }}>
+          <div className="fp-center" style={{ position: "relative" }}>
             {/* Stacked card effect */}
             <div style={{ position: "absolute", top: "-10px", left: "10px", right: "-10px", bottom: "10px", background: "var(--border)", borderRadius: "28px", opacity: 0.5 }} />
             <div style={{ position: "absolute", top: "-5px", left: "5px", right: "-5px", bottom: "5px", background: "var(--card-bg)", borderRadius: "28px", opacity: 0.75 }} />
@@ -140,7 +140,7 @@ export default function FeaturedProducts() {
           </div>
 
           {/* Right — description + CTA */}
-          <div>
+          <div className="fp-right">
             <p style={{
               fontFamily: "var(--sans)", fontSize: "clamp(15px,1.4vw,17px)",
               lineHeight: 1.85, color: "var(--text-muted)", marginBottom: "36px",

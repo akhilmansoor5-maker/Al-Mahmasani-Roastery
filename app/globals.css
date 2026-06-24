@@ -368,3 +368,103 @@ a { text-decoration: none; color: inherit; }
 .img-zoom { overflow: hidden; }
 .img-zoom > * { transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
 .img-zoom:hover > * { transform: scale(1.05); }
+
+/* ─────────────────────────────────────────────
+   MOBILE RESPONSIVE
+───────────────────────────────────────────── */
+
+/* Hero slideshow bottom content */
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-end;
+}
+@media (max-width: 768px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Stats 4-col → 2x2 on mobile */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    padding: 24px 16px !important;
+  }
+  .stats-grid > div:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.10) !important;
+  }
+}
+
+/* Featured carousel 3-col → vertical stack on mobile */
+.fp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .fp-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .fp-left  { order: 2; }
+  .fp-center { order: 1; }
+  .fp-right  { order: 3; }
+}
+
+/* CTA split card → stack on mobile */
+.cta-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .cta-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Footer white card → stack on mobile */
+.footer-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+}
+@media (max-width: 900px) {
+  .footer-card-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Hide footer big nav on small screens, show compact instead */
+.footer-nav-big { display: flex; flex-direction: column; gap: 4px; }
+@media (max-width: 900px) {
+  .footer-nav-big { flex-direction: row; flex-wrap: wrap; gap: 8px 24px; }
+  .footer-nav-big a { font-size: clamp(1.3rem, 5vw, 2rem) !important; }
+}
+
+/* Products hero quick-nav pills wrap nicely */
+@media (max-width: 640px) {
+  .hero-pill-nav { gap: 6px !important; }
+  .hero-pill-nav a { font-size: 12px !important; padding: 7px 12px !important; }
+}
+
+/* About strip mosaic — shorter on mobile */
+@media (max-width: 768px) {
+  .about-mosaic > div { height: 140px !important; }
+}
