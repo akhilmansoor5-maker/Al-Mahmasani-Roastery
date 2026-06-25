@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const timeline = [
-  { year: "1975", title: "Founded in Sharjah", desc: "Al Mahmasani Roasteries opens its first roasting facility in Sharjah Industrial Area, serving local markets." },
-  { year: "1985", title: "First Retail Partnerships", desc: "Secured supply agreements with Carrefour and Union Coop, marking our entry into modern retail." },
-  { year: "1998", title: "Expanded to Chocolate Coating", desc: "Launched our premium chocolate-coated nut line, now our most awarded product range." },
-  { year: "2008", title: "UAE-Wide Distribution", desc: "Established distribution network covering all seven emirates, serving 500+ retail locations." },
-  { year: "2015", title: "Kri Kri Savoury Launch", desc: "Introduced the Kri Kri flavoured snack line — a breakthrough product that redefined savoury nuts in the UAE." },
-  { year: "2024", title: "200+ SKUs Milestone", desc: "Today we supply over 200 premium SKUs to 1,000+ wholesale partners across hospitality, retail and e-commerce." },
+  { year: "1975", title: "The Beginning", desc: "Al Mahmasani Roasteries was founded in Lebanon as a family-owned roastery, built on a passion for premium nuts, dried fruits, and traditional roasting craftsmanship." },
+  { year: "1985", title: "Building Relationships", desc: "The company expanded its sourcing network and strengthened partnerships, earning a reputation for quality and authenticity across regional markets." },
+  { year: "1995", title: "Product Expansion", desc: "The portfolio grew to include a wider range of premium nuts, dried fruits, confectionery, and specialty products to meet evolving customer preferences." },
+  { year: "2005", title: "Generations of Quality", desc: "With decades of expertise, Al Mahmasani continued refining its products and processes while preserving its heritage of excellence and trust." },
+  { year: "2020", title: "UAE Launch", desc: "Al Mahmasani Roasteries officially commenced operations in the United Arab Emirates, introducing its premium products and Lebanese roasting heritage to customers throughout the UAE." },
+  { year: "2025", title: "50 Years Strong", desc: "Celebrating half a century of excellence, Al Mahmasani Roasteries continues to grow, innovate, and serve businesses across the region with the same commitment to quality that started it all." },
 ];
 
 const values = [
@@ -46,10 +46,10 @@ export default function AboutPage() {
               Born from a Passion<br />for the Perfect Roast
             </h2>
             <p className="body-lg" style={{ marginBottom: "20px" }}>
-              In 1975, our founder set up a small roasting facility in Sharjah with a single belief: that premium nuts, roasted with care and consistency, could transform a business. Fifty years later, that belief drives everything we do.
+              Founded in Lebanon in 1975, Al Mahmasani Roasteries began with a commitment to delivering premium nuts and dry fruits crafted with care, consistency, and exceptional quality. Over the decades, our dedication to excellence has earned the trust of businesses and customers alike.
             </p>
             <p className="body-lg" style={{ marginBottom: "32px" }}>
-              Today, Al Mahmasani Roasteries supplies over 1,000 wholesale partners — from leading supermarket chains to boutique hotels — with 200+ SKUs across seven distinct product categories.
+              In 2020, we expanded our operations to the United Arab Emirates, bringing our heritage of quality to retailers, wholesalers, and businesses across the country. Today, we proudly manufacture and supply a wide range of premium nuts and dry fruits, combining traditional expertise with modern standards to deliver products that businesses can depend on.
             </p>
             <Link href="/products" className="btn btn-dark">Explore Our Products</Link>
           </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <p className="eyebrow" style={{ marginBottom: "16px" }}>Our Journey</p>
-            <h2 className="display-lg" style={{ color: "white" }}>Five Decades of Growth</h2>
+            <h2 className="display-lg" style={{ color: "white" }}>50 Years in the Making</h2>
           </div>
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
             {timeline.map((item, i) => (

@@ -68,7 +68,7 @@ export default function HeroSlideshow() {
         </div>
         <div className="hero-in-3" style={{ paddingBottom: "8px" }}>
           <p style={{ fontFamily: "var(--sans)", fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.75, color: "rgba(255,255,255,0.82)", marginBottom: "32px", maxWidth: "420px" }}>
-            UAE&#39;s leading roastery, supplying more than 1,000 wholesale partners every day. From premium cashews to artisan chocolate-coated nuts — 200+ products.
+            UAE&#39;s trusted roastery, serving more than 500 wholesale partners across the region. From premium nuts and dried fruits to artisan chocolate-coated selections, we offer over 100 carefully crafted products tailored for retail and wholesale businesses.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
             <Link href="/products" className="btn btn-gold">Explore Collections →</Link>

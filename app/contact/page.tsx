@@ -55,7 +55,7 @@ export default function ContactPage() {
                 { label: "Location", value: "Sharjah Industrial Area 4, United Arab Emirates" },
                 { label: "Phone / WhatsApp", value: "+971 50 462 2865", href: "tel:+971504622865" },
                 { label: "Email", value: "info@almahmasani.ae", href: "mailto:info@almahmasani.ae" },
-                { label: "Hours", value: "Mon–Fri 8:00 am – 6:00 pm GST" },
+                { label: "Hours", value: "Mon–Sat 8:30 am – 5:00 pm GST" },
               ].map((item) => (
                 <div key={item.label} style={{ marginBottom: "28px", paddingBottom: "28px", borderBottom: "1px solid var(--border)" }}>
                   <p style={{ fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)", marginBottom: "6px" }}>{item.label}</p>

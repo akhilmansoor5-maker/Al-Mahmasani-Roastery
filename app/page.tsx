@@ -40,7 +40,7 @@ export default function HomePage() {
               Roasted to<br />Perfection Since 1975
             </h2>
             <p className="body-lg" style={{ marginBottom: "32px" }}>
-              From a single roastery in Sharjah to the UAE&#39;s most trusted wholesale nut supplier. Al Mahmasani combines traditional craftsmanship with modern food science to deliver consistently exceptional products.
+              From our beginnings in Lebanon in 1975 to our expansion into the UAE in 2020, Al Mahmasani Roasteries has built a reputation for delivering premium nuts and roasted products to businesses across the region. Combining decades of roasting expertise with modern production standards, we manufacture and supply high-quality products to supermarkets, retailers, and wholesalers throughout the UAE, ensuring consistency, freshness, and exceptional taste in every batch.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
               <Link href="/about" className="btn btn-dark">Our Story</Link>
