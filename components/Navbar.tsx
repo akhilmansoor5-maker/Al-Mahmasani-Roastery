@@ -9,9 +9,8 @@ const productCategories = [
   { label: "Hazelnut Collection",   href: "/products#hazelnut",  img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
   { label: "Cashew Collection",     href: "/products#cashew",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
   { label: "Coffee Collection",     href: "/products#coffee",    img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
-  { label: "Fruit Collection",      href: "/products#fruit",     img: "/images/Pistachio Roasted.jpg.jpeg" },
+  { label: "Roastery Collection",   href: "/products#fruit",     img: "/images/Pistachio Roasted.jpg.jpeg" },
   { label: "Savoury Collection",    href: "/products#savoury",   img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
-  { label: "Mixed Nuts",            href: "/products#mixed",     img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 1.png" },
 ];
 
 const aboutLinks = [
@@ -64,7 +63,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" onClick={close} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <div style={{ position: "relative", width: "42px", height: "42px", borderRadius: "10px", overflow: "hidden", flexShrink: 0 }}>
-              <Image src="/images/AMR Logo-01.jpg.jpeg" alt="Al Mahmasani" fill sizes="42px"
+              <Image src="/images/AM Logo-01.png" alt="Al Mahmasani" fill sizes="42px"
                 style={{ objectFit: "contain", filter: isHero ? "brightness(0) invert(1)" : "none", transition: "filter 0.3s" }} />
             </div>
             <div>
@@ -133,7 +132,7 @@ export default function Navbar() {
           transition: "opacity 0.2s ease, transform 0.2s ease",
         }}>
           <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "32px clamp(20px,5vw,80px) 28px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: "10px", marginBottom: "24px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(6,1fr)", gap: "10px", marginBottom: "24px" }}>
               {productCategories.map((cat) => (
                 <Link key={cat.label} href={cat.href} onClick={close} style={{ textDecoration: "none" }}>
                   <div style={{ background: "#F5EDE0", borderRadius: "12px", overflow: "hidden", transition: "transform 0.2s, box-shadow 0.2s" }}

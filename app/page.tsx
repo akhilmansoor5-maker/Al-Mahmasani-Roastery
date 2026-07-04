@@ -9,7 +9,7 @@ const categories = [
   { label: "Hazelnut Collection",   href: "/products#hazelnut",  img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
   { label: "Cashew Collection",     href: "/products#cashew",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
   { label: "Coffee Collection",     href: "/products#coffee",    img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
-  { label: "Fruit Collection",      href: "/products#fruit",     img: "/images/Pistachio Roasted.jpg.jpeg" },
+  { label: "Roastery Collection",   href: "/products#fruit",     img: "/images/Pistachio Roasted.jpg.jpeg" },
   { label: "Savoury Collection",    href: "/products#savoury",   img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
 ];
 
@@ -17,7 +17,7 @@ const stats = [
   { value: "50+", label: "Years of Excellence" },
   { value: "200+", label: "Premium SKUs" },
   { value: "1000+", label: "Wholesale Partners" },
-  { value: "7", label: "Product Categories" },
+  { value: "6", label: "Product Categories" },
 ];
 
 const trustedBrands = [

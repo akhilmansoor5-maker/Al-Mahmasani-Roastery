@@ -7,9 +7,8 @@ const categories = [
   { label: "Hazelnut Collection",   href: "/products#hazelnut" },
   { label: "Cashew Collection",     href: "/products#cashew" },
   { label: "Coffee Collection",     href: "/products#coffee" },
-  { label: "Fruit Collection",      href: "/products#fruit" },
+  { label: "Roastery Collection",   href: "/products#fruit" },
   { label: "Savoury Collection",    href: "/products#savoury" },
-  { label: "Mixed Nuts",            href: "/products#mixed" },
 ];
 
 const aboutLinks = [
@@ -41,7 +40,7 @@ export default function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "20px" }}>
               <div style={{ position: "relative", width: "40px", height: "40px", borderRadius: "10px", overflow: "hidden", flexShrink: 0 }}>
-                <Image src="/images/AMR Logo-01.jpg.jpeg" alt="Al Mahmasani" fill sizes="40px" style={{ objectFit: "contain" }} />
+                <Image src="/images/AM Logo-01.png" alt="Al Mahmasani" fill sizes="40px" style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <p style={{ fontFamily: "var(--sans)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--dark)", lineHeight: 1.2 }}>Al Mahmasani</p>
