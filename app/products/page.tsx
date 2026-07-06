@@ -68,64 +68,71 @@ const roasteryProducts: { name: string; img: string | null }[] = [
   { name: "Strawberry Dark",      img: null },
 ];
 
-/* Savoury Collection */
+/* Savoury Collection — mapped from 2026 catalogue audit */
+const IMG = "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/";
 const savouryGroups = [
   {
     label: "Cashew Kri Kri",
     items: [
-      { name: "Cashew Krikri Original",          img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 1.png" },
-      { name: "Cashew Krikri Lemon",             img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 2.png" },
-      { name: "Cashew Krikri Zaatar",            img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 3.png" },
-      { name: "Cashew Krikri Onion and Paprika", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 4.png" },
-      { name: "Cashew Krikri Tikka Masala",      img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 5.png" },
-      { name: "Cashew Krikri Chilli",            img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 6.png" },
-      { name: "Cashew Krikri BBQ",               img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 7.png" },
-      { name: "Cashew Krikri Truffle",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 8.png" },
-      { name: "Cashew Krikri Cheetos",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 9.png" },
+      { name: "Cashew Kri kri Original",          img: IMG + "Cashew 16.png" },
+      { name: "Cashew Kri kri Lemon",             img: IMG + "Cashew 12.png" },
+      { name: "Cashew Kri kri Zaatar",            img: IMG + "Cashew 4.png"  },
+      { name: "Cashew Kri kri Onion and Paprika", img: IMG + "Cashew 5.png"  },
+      { name: "Cashew Kri kri Tikka Masala",      img: IMG + "Cashew 11.png" },
+      { name: "Cashew Kri kri Chilli",            img: IMG + "Cashew 3.png"  },
+      { name: "Cashew Kri kri BBQ",               img: IMG + "Cashew 14.png" },
+      { name: "Cashew Kri kri Truffle",           img: IMG + "Cashew 15.png" },
+      { name: "Cashew Kri kri Cheetos",           img: IMG + "Cashew 8.png"  },
     ],
   },
   {
     label: "Cashew Cracker",
     items: [
-      { name: "Cashew Cracker Chilli",            img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 10.png" },
-      { name: "Cashew Cracker Cheese",            img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 11.png" },
-      { name: "Cashew Cracker Zaatar",            img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 12.png" },
-      { name: "Cashew Cracker Salt and Vinegar",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 13.png" },
-      { name: "Cashew Cracker Ketchup",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 14.png" },
-      { name: "Cashew Cracker Cheetos",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Cashew 15.png" },
+      { name: "Cashew Cracker Chilli",           img: IMG + "Cashew 9.png"  },
+      { name: "Cashew Cracker Cheese",           img: IMG + "Cashew 2.png"  },
+      { name: "Cashew Cracker Zaatar",           img: IMG + "Cashew 10.png" },
+      { name: "Cashew Cracker Salt and Vinegar", img: IMG + "Cashew 13.png" },
+      { name: "Cashew Cracker Ketchup",          img: IMG + "Cashew 7.png"  },
+      { name: "Cashew Cracker Cheetos",          img: IMG + "Cashew 6.png"  },
     ],
   },
   {
     label: "Almond Kri Kri",
     items: [
-      { name: "Almonds Krikri Original", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 1.png" },
-      { name: "Almonds Krikri BBQ",      img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Almond 2.png" },
+      { name: "Almonds Kri kri Original", img: IMG + "Almond 1.png" },
+      { name: "Almonds Kri kri BBQ",      img: IMG + "Almond 2.png" },
     ],
   },
   {
     label: "Peanut Kri Kri",
     items: [
-      { name: "Peanut Krikri Original", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 1.png" },
-      { name: "Peanut Krikri Cheese",   img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 2.png" },
+      { name: "Peanut Kri kri Original", img: IMG + "Penuts 3.png" },
+      { name: "Peanut Kri kri Cheese",   img: IMG + "Penuts 1.png" },
     ],
   },
   {
     label: "Peanut Ball",
     items: [
-      { name: "Peanut Ball Cheetos", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 3.png" },
-      { name: "Peanut Ball Cheese",  img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 4.png" },
-      { name: "Peanut Ball Ketchup", img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Penuts 5.png" },
+      { name: "Peanut Ball Cheetos", img: IMG + "Penuts 4.png" },
+      { name: "Peanut Ball Cheese",  img: IMG + "Penuts 2.png" },
+      { name: "Peanut Ball Ketchup", img: IMG + "Penuts 5.png" },
     ],
   },
   {
     label: "Sunflower Cracker",
     items: [
-      { name: "Sunflower Cracker BBQ",              img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 1.png" },
-      { name: "Sunflower Cracker Chilli",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 2.png" },
-      { name: "Sunflower Cracker Onion and Paprika",img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 3.png" },
-      { name: "Sunflower Cracker Zaatar",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 4.png" },
-      { name: "Sunflower Cracker Cheese",           img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 5.png" },
-      { name: "Sunflower Cracker Ketchup",          img: "/images/Cashew, Penuts & Sunflowers/Cashew, Penuts & Sunflowers/Sunflower 6.png" },
+      { name: "Sunflower Cracker BBQ",               img: IMG + "Sunflower 1.png" },
+      { name: "Sunflower Cracker Chilli",            img: IMG + "Sunflower 6.png" },
+      { name: "Sunflower Cracker Onion and Paprika", img: IMG + "Sunflower 2.png" },
+      { name: "Sunflower Cracker Zaatar",            img: IMG + "Sunflower 5.png" },
+      { name: "Sunflower Cracker Cheese",            img: IMG + "Sunflower 3.png" },
+      { name: "Sunflower Cracker Ketchup",           img: IMG + "Sunflower 4.png" },
+    ],
+  },
+  {
+    label: "Kernel Mix",
+    items: [
+      { name: "Kernel Mix", img: null },
     ],
   },
 ];
