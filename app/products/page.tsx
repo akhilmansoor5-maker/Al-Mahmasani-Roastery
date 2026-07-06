@@ -6,66 +6,66 @@ import Link from "next/link";
 ──────────────────────────────────────────── */
 
 /* Chocolate-Coated Nuts — Pecan (11) + Almond (8) */
-const chocolateProducts = [
-  { name: "Pecan Milk",           img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
-  { name: "Pecan Caramel",        img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_mstiu0mstiu0msti.png" },
-  { name: "Pecan White",          img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_q5f1awq5f1awq5f1.png" },
-  { name: "Pecan Dark Chocolate", img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_vxzyb0vxzyb0vxzy.png" },
-  { name: "Pecan Cocoa",          img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_6see796see796see (1).png" },
-  { name: "Pecan Matcha",         img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_64gus764gus764gu (1) (1).png" },
-  { name: "Pecan Oreo",           img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_wewh3qwewh3qwewh (1).png" },
-  { name: "Pecan Lotus",          img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_ydaskwydaskwydas.png" },
-  { name: "Pecan Raspberry",      img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_yubfqlyubfqlyubf (1).png" },
-  { name: "Pecan Mango",          img: "/images/Catalogue Photos/Pecan 2/55bf0020-d115-4536-b96a-be01d6a1f82f.png" },
-  { name: "Pecan Mix",            img: "/images/Catalogue Photos/Pecan 2/Gemini_Generated_Image_af6ed3af6ed3af6e.png" },
-  { name: "Almond Milk Chocolate", img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png" },
-  { name: "Almond Caramel",       img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_7rsipk7rsipk7rsi.png" },
-  { name: "Almond White",         img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp41iayp41iayp4.png" },
-  { name: "Almond Dark Chocolate",img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_ayp688ayp688ayp6.png" },
-  { name: "Almond Cocoa",         img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_cfk48xcfk48xcfk4.png" },
-  { name: "Almond Oreo",          img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_qshizzqshizzqshi.png" },
-  { name: "Almond Lotus",         img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_vb7ezovb7ezovb7e.png" },
-  { name: "Almond Mix",           img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_xnbly1xnbly1xnbl.png" },
+const chocolateProducts: { name: string; img: string | null }[] = [
+  { name: "Pecan Milk",            img: "/images/products/pecan-9.jpg" },
+  { name: "Pecan Caramel",         img: "/images/products/pecan-1.jpg" },
+  { name: "Pecan White",           img: "/images/products/pecan-6.jpg" },
+  { name: "Pecan Dark Chocolate",  img: "/images/products/pecan-4.jpg" },
+  { name: "Pecan Cocoa",           img: "/images/products/pecan-5.jpg" },
+  { name: "Pecan Matcha",          img: "/images/products/pecan-7.jpg" },
+  { name: "Pecan Oreo",            img: "/images/products/pecan-2.jpg" },
+  { name: "Pecan Lotus",           img: "/images/products/pecan-3.jpg" },
+  { name: "Pecan Raspberry",       img: "/images/products/pecan-8.jpg" },
+  { name: "Pecan Mango",           img: "/images/products/pecan-10.jpg" },
+  { name: "Pecan Mix",             img: null },
+  { name: "Almond Milk Chocolate", img: "/images/products/almond-6.jpg" },
+  { name: "Almond Caramel",        img: "/images/products/almond-5.jpg" },
+  { name: "Almond White",          img: "/images/products/almond-3.jpg" },
+  { name: "Almond Dark Chocolate", img: "/images/products/almond-7.jpg" },
+  { name: "Almond Cocoa",          img: "/images/products/almond-2.jpg" },
+  { name: "Almond Oreo",           img: "/images/products/almond-8.jpg" },
+  { name: "Almond Lotus",          img: "/images/products/almond-4.jpg" },
+  { name: "Almond Mix",            img: "/images/products/almond-1.jpg" },
 ];
 
 /* Hazelnut Collection (7) */
-const hazelnutProducts = [
-  { name: "Hazelnut Milk Chocolate", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
-  { name: "Hazelnut Caramel",        img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
-  { name: "Hazelnut White",          img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
-  { name: "Hazelnut Dark Chocolate", img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_u86dsdu86dsdu86d.png" },
-  { name: "Hazelnut Cocoa",          img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_l339rul339rul339.png" },
-  { name: "Hazelnut Oreo",           img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_ln68rsln68rsln68 (1).png" },
-  { name: "Hazelnut Mix",            img: "/images/Catalogue Photos/Hezelnuts/Gemini_Generated_Image_mzzy5mmzzy5mmzzy.png" },
+const hazelnutProducts: { name: string; img: string | null }[] = [
+  { name: "Hazelnut Milk Chocolate", img: "/images/products/hazelnut-1.jpg" },
+  { name: "Hazelnut Caramel",        img: null },
+  { name: "Hazelnut White",          img: "/images/products/hazelnut-3.jpg" },
+  { name: "Hazelnut Dark Chocolate", img: "/images/products/hazelnut-2.jpg" },
+  { name: "Hazelnut Cocoa",          img: null },
+  { name: "Hazelnut Oreo",           img: "/images/products/hazelnut-4.jpg" },
+  { name: "Hazelnut Mix",            img: null },
 ];
 
 /* Cashew Collection (5) */
 const cashewProducts = [
-  { name: "Cashew Milk",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_6nmgl56nmgl56nmg.png" },
-  { name: "Cashew Caramel", img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_fd2qw1fd2qw1fd2q.png" },
-  { name: "Cashew White",   img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_jmh8w5jmh8w5jmh8.png" },
-  { name: "Cashew Dark",    img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_krelcykrelcykrel.png" },
-  { name: "Cashew Mix",     img: "/images/Catalogue Photos/Cashew/Gemini_Generated_Image_w35cxiw35cxiw35c.png" },
+  { name: "Cashew Milk",    img: "/images/products/cashew-5.jpg" },
+  { name: "Cashew Caramel", img: "/images/products/cashew-3.jpg" },
+  { name: "Cashew White",   img: "/images/products/cashew-4.jpg" },
+  { name: "Cashew Dark",    img: "/images/products/cashew-2.jpg" },
+  { name: "Cashew Mix",     img: "/images/products/cashew-1.jpg" },
 ];
 
 /* Coffee Collection (7) */
 const coffeeProducts = [
-  { name: "Coffee Milk Chocolate",                  img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2cfk252cfk252cfk.png" },
-  { name: "Coffee White Chocolate",                 img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_2e2kw72e2kw72e2k.png" },
-  { name: "Coffee Dark Chocolate",                  img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_35xuo835xuo835xu.png" },
-  { name: "Coffee Dusted Saudi Beans",              img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_3d9w513d9w513d9w.png" },
-  { name: "Coffee Dusted Powder & White Chocolates",img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_49w10g49w10g49w1.png" },
-  { name: "Coffee Dusted Powder Chocolates",        img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_kjmce9kjmce9kjmc.png" },
-  { name: "Coffee Chocolates Mix",                  img: "/images/Catalogue Photos/Cofee/Gemini_Generated_Image_rf8iyerf8iyerf8i.png" },
+  { name: "Coffee Milk Chocolate",                   img: "/images/products/coffee-5.jpg" },
+  { name: "Coffee White Chocolate",                  img: "/images/products/coffee-6.jpg" },
+  { name: "Coffee Dark Chocolate",                   img: "/images/products/coffee-2.jpg" },
+  { name: "Coffee Dusted Saudi Beans",               img: "/images/products/coffee-1.jpg" },
+  { name: "Coffee Dusted Powder & White Chocolates", img: "/images/products/coffee-3.jpg" },
+  { name: "Coffee Dusted Powder Chocolates",         img: "/images/products/coffee-7.jpg" },
+  { name: "Coffee Chocolates Mix",                   img: "/images/products/coffee-4.jpg" },
 ];
 
 /* Roastery Collection (5) */
-const roasteryProducts = [
-  { name: "Raisins Mix Flavours", img: "/images/Pistachio Roasted.jpg.jpeg" },
-  { name: "Strawberry Milk",      img: "/images/Almond Unsalted.jpg.jpeg" },
-  { name: "Strawberry White",     img: "/images/Peanut Roasted.jpg.jpeg" },
-  { name: "Raspberry White",      img: "/images/cashew roasted.jpg.jpeg" },
-  { name: "Strawberry Dark",      img: "/images/Catalogue Photos/Almond 1/Gemini_Generated_Image_4w45ud4w45ud4w45.png" },
+const roasteryProducts: { name: string; img: string | null }[] = [
+  { name: "Raisins Mix Flavours", img: null },
+  { name: "Strawberry Milk",      img: null },
+  { name: "Strawberry White",     img: null },
+  { name: "Raspberry White",      img: null },
+  { name: "Strawberry Dark",      img: null },
 ];
 
 /* Savoury Collection */
@@ -139,11 +139,12 @@ function ProductCard({ name, img }: { name: string; img: string | null }) {
           <Image src={img} alt={name} fill sizes="320px" style={{ objectFit: "cover" }} />
         ) : (
           <div className="card-placeholder" style={{ height: "220px" }}>
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.5">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1.5">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
               <path d="M21 15l-5-5L5 21"/>
             </svg>
+            <span className="card-placeholder-label">Image Coming Soon</span>
           </div>
         )}
       </div>
