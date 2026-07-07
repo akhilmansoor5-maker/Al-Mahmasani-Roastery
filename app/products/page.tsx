@@ -17,7 +17,7 @@ const chocolateProducts: { name: string; img: string | null }[] = [
   { name: "Pecan Lotus",           img: "/images/products/pecan-3.jpg" },
   { name: "Pecan Raspberry",       img: "/images/products/pecan-8.jpg" },
   { name: "Pecan Mango",           img: "/images/products/pecan-10.jpg" },
-  { name: "Pecan Mix",             img: null },
+  { name: "Pecan Mix",             img: "/images/products/pecan-mix.jpg" },
   { name: "Almond Milk Chocolate", img: "/images/products/almond-6.jpg" },
   { name: "Almond Caramel",        img: "/images/products/almond-5.jpg" },
   { name: "Almond White",          img: "/images/products/almond-3.jpg" },
@@ -61,11 +61,11 @@ const coffeeProducts = [
 
 /* Roastery Collection (5) */
 const roasteryProducts: { name: string; img: string | null }[] = [
-  { name: "Raisins Mix Flavours", img: null },
-  { name: "Strawberry Milk",      img: null },
-  { name: "Strawberry White",     img: null },
-  { name: "Raspberry White",      img: null },
-  { name: "Strawberry Dark",      img: null },
+  { name: "Raisins Mix Flavours", img: "/images/products/raisins-mix.jpg" },
+  { name: "Strawberry Milk",      img: "/images/products/strawberry-milk.jpg" },
+  { name: "Strawberry White",     img: "/images/products/strawberry-white.jpg" },
+  { name: "Raspberry White",      img: "/images/products/raspberry-white.jpg" },
+  { name: "Strawberry Dark",      img: "/images/products/strawberry-dark.jpg" },
 ];
 
 /* Savoury Collection — mapped from 2026 catalogue audit */
